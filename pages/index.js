@@ -15,15 +15,7 @@ export default function Home() {
     })
     return (
         <Layout pageTitle={'Home'}>
-            {posts.map((post, key) => {
-                return (
-                    <div key={key} className="border-t-2 pt-4 mb-4">
-                        <p>{post.date}</p>
-                        <p>{post.hour}</p>
-                        <p>{post.content}</p>
-                    </div>
-                )
-            })}
+            <h1 className="text-2xl text-center mt-20">INDEX</h1>
         </Layout>
     )
 }
