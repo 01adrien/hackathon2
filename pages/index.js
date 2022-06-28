@@ -15,15 +15,7 @@ export default function Home() {
     })
     return (
         <Layout pageTitle={'Home'}>
-            {posts.map((post, key) => {
-                return (
-                    <div key={key} className="border-t-2 pt-4 mb-4">
-                        <p>{post.date}</p>
-                        <p>{post.hour}</p>
-                        <p>{post.content}</p>
-                    </div>
-                )
-            })}
+            <p className="text-[3rem] text-center mt-40">HACKATON</p>
         </Layout>
     )
 }
