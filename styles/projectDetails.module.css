@@ -8,20 +8,21 @@
         background-attachment: fixed;
         min-height: 100vh;
         display: flex;
-
 }
 
 .leftSide {
-    flex: 1 1 auto;
+    width: calc(100% / 3);
+    padding-top: 20px;
 }
 
 .middle {
     padding-top: 50px;
-    flex: 1 1 auto;
+    width: calc(100% / 3);
 }
 
 .rigthSide {
-    flex: 1 1 auto;
+    width: calc(100% / 3);
+    padding-top: 50px;
 }
 
 .categoryBox {
@@ -29,6 +30,7 @@
     width: 450px;
     height: 700px;
     border-radius: 20px;
+    margin: auto;
 }
 
 .upBorder {
@@ -107,7 +109,43 @@
     padding-top: 50px;
 }
 
+/* LEFT SIDE */
+
 .marsDiv {
-    margin-left: 100px;
-    margin-top: 100px;
+    margin: auto;
+    padding-left: 16%;
+}
+
+.projectDescription {
+    color: white;
+    text-align: center;
+}
+
+.projectDescriptionTitle {
+    margin-bottom: 20px;
+    font-size: 40px;
+    padding: 0 10% 0 10%;
+}
+
+.projectDescriptionText {
+    margin: 50px 50px;
+}
+
+/* RIGHT SIDE */
+
+.crewToolsDiv {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.crewToolsTitle {
+    color: white;
+    font-size: 40px;
+}
+
+.crewToolsImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px;
 }
