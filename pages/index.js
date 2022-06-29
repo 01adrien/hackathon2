@@ -7,7 +7,7 @@ export default function Home() {
         <Layout pageTitle={'Home'}>
             <div className="home-bg h-[100vh] flex flex-col items-center">
                 <div className="text-white mt-36 flex flex-col items-center w-[80vw] font-[800] text-[76px]">
-                    <p>UP'SIDE</p>
+                    <p className="animate-bounce">UP'SIDE</p>
                     <p className="flex items-center justify-center text-[46px] font-[700]">
                         One project <span className="m-5 text-2xl">⇒</span>
                         One
