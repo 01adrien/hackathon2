@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { getAllPosts } from '../utils/nextApiCalls'
 
 export default function Home() {
+    console.log(process.env)
     const [posts, setPosts] = useState([])
 
     async function getPostsList() {
