@@ -1,16 +1,18 @@
-import style from '../../styles/launch.module.css'
+import CreateForm from '../../components/launch/CreateForm'
+import Rocket from '../../components/launch/Rocket'
+import Layout from '../../components/layout'
+import { CreateRocketContextProvider } from '../../context/CreateRocketContext'
+import styles from '../../styles/launch.module.css'
 
 export default function Launch() {
     return (
-        <>
-            <div className={style.launchBody}>
-                <div className={style.leftSide}>
-                    <div className={style.categoryBox}>
-                        <div className={style.upBorder}></div>
-                        <h1>Create your project !</h1>
-                    </div>
+        <CreateRocketContextProvider>
+            <Layout title="Create a Project">
+                <div className={styles.launchBody}>
+                    <CreateForm />
+                    <Rocket />
                 </div>
-            </div>
-        </>
+            </Layout>
+        </CreateRocketContextProvider>
     )
 }
