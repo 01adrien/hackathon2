@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react'
 import { getAllPosts } from '../utils/nextApiCalls'
 
 export default function Home() {
+    console.log(process.env)
     const [posts, setPosts] = useState([])
 
     async function getPostsList() {
@@ -15,6 +16,9 @@ export default function Home() {
     })
     return (
         <Layout pageTitle={'Home'}>
+            <p className="text-[3rem] text-center text-red-800 mt-40">
+                HACKATON
+            </p>
             {posts.map((post, key) => {
                 return (
                     <div key={key} className="border-t-2 pt-4 mb-4">
