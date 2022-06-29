@@ -7,8 +7,8 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import Link from 'next/link'
 import createRocketContext from '../../context/CreateRocketContext'
 
-export default function ProgressStepper() {
-    const { activeStep, setActiveStep } = useContext(createRocketContext)
+export default function ProgressStepper({ activeStep, setActiveStep }) {
+    const { setProjectData, projectData } = useContext(createRocketContext)
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1)
@@ -19,33 +19,20 @@ export default function ProgressStepper() {
     }
 
     const submitSeanceForm = async () => {
-        const id = await createSeance(seanceData)
-        const media_url = await postSeanceMedia(
-            media,
-            id,
-            `${seanceData.title}-${seanceData.media_name}`
-        )
-        updateSeance(id, {
-            media_url,
-        })
-        success()
-        setSeanceData({})
+        console.log(projectData)
     }
 
-    if (activeStep < 4) {
+    if (activeStep < 5) {
         return (
             <MobileStepper
-                variant="progress"
-                steps={5}
+                variant="dots"
+                steps={6}
                 position="static"
                 activeStep={activeStep}
                 sx={{
-                    maxWidth: '350px',
                     height: '80px',
                     width: '80%',
                     background: 'none',
-                    position: 'absolute',
-                    bottom: '5vh',
                     flexGrow: 1,
                     '& .MuiLinearProgress-bar': {
                         background: '#F98F83',
@@ -58,7 +45,7 @@ export default function ProgressStepper() {
                     <Button
                         size="small"
                         onClick={handleNext}
-                        disabled={activeStep === 4}
+                        disabled={activeStep === 5}
                         sx={{ color: '#F98F83' }}
                     >
                         <ArrowCircleRightIcon
@@ -88,13 +75,7 @@ export default function ProgressStepper() {
         )
     } else {
         return (
-            <div
-                style={{
-                    position: 'absolute',
-                    bottom: '5vh',
-                    left: '15%',
-                }}
-            >
+            <div>
                 <Button
                     size="small"
                     onClick={handleBack}

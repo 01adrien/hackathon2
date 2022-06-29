@@ -1,18 +1,22 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import createRocketContext from '../../context/CreateRocketContext'
 import Image from 'next/image'
 
-export default function Rocket() {
+export default function Rocket({ activeStep }) {
     const [color, setColor] = useState('red')
-    const { activeStep } = useContext(createRocketContext)
+    const [rocketImg, setRocketImg] = useState()
 
-    const rocketImg = `/images/rocket/${color}/rocket_${activeStep}`
+    useEffect(() => {
+        setRocketImg(`/images/rocket/${color}/rocket_${activeStep}`)
+
+        console.log(rocketImg)
+    }, [activeStep, color])
 
     return (
         <div>
             <Image
                 src={`/images/rocket/${color}/rocket_${activeStep}.png`}
-                alt="Picture of the author"
+                alt="Picture of rocket"
                 width={500}
                 height={500}
             />

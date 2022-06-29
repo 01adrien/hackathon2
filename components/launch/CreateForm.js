@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useEffect } from 'react'
 import createRocketContext, {
     CreateRocketContextProvider,
 } from '../../context/CreateRocketContext'
@@ -13,21 +13,27 @@ import TechnoForm from './TechnoForm'
 import styles from '../../styles/launch.module.css'
 import Image from 'next/image'
 
-export default function CreateForm() {
-    const { activeStep } = useContext(createRocketContext)
+export default function CreateForm({ activeStep, setActiveStep }) {
+    useEffect(() => {}, [activeStep])
 
     return (
         <CreateRocketContextProvider>
             <div className={styles.formBox}>
                 <div className={styles.topBox}></div>
-                <h1 className="">Launch your Project</h1>
-                {activeStep === 0 && <MainDataForm />}
-                {activeStep === 1 && <SectorForm />}
-                {activeStep === 2 && <ProjectTypeForm />}
-                {activeStep === 3 && <TechnoForm />}
-                {activeStep === 4 && <DescriptionForm />}
-                {activeStep === 5 && <Summary />}
-                <ProgressStepper />
+                <h1 className={styles.title}>Launch your Project</h1>
+                <h2>active step : {activeStep}</h2>
+                <div className="flex flex-col h-[100%] justify-center items-center">
+                    {activeStep === 0 && <MainDataForm />}
+                    {activeStep === 1 && <SectorForm />}
+                    {activeStep === 2 && <ProjectTypeForm />}
+                    {activeStep === 3 && <TechnoForm />}
+                    {activeStep === 4 && <DescriptionForm />}
+                    {activeStep === 5 && <Summary />}
+                    <ProgressStepper
+                        activeStep={activeStep}
+                        setActiveStep={setActiveStep}
+                    />
+                </div>
                 <div className={styles.bottomBox}></div>{' '}
             </div>
         </CreateRocketContextProvider>
