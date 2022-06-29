@@ -66,6 +66,12 @@
     margin-bottom: -25px;
 }
 
+.progressTitle2 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: -40px;
+}
+
 .progressBar {
     width: 80%;
     margin: 10%;
@@ -159,4 +165,8 @@
     flex-direction: row;
     justify-content: space-around;
     padding: 40px;
+}
+
+.rocketDiv {
+    transform: rotate(20deg);
 }

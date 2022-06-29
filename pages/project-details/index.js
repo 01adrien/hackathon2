@@ -48,8 +48,9 @@ export default function ProjectDetails() {
                             <progress
                                 className={style.progressBar}
                                 max="100"
-                                value="70"
+                                value="64"
                             ></progress>
+                            <h3 className={style.progressTitle2}>64%</h3>
                         </div>
                         <div className={style.projectDetails}>
                             <div className={style.projectBox1}>
@@ -61,8 +62,8 @@ export default function ProjectDetails() {
                                 <h3 className={style.boxNumber}>8</h3>
                             </div>
                             <div className={style.projectBox3}>
-                                <h3 className={style.boxTitle}>SPENT DAYS</h3>
-                                <h3 className={style.boxNumber}>45</h3>
+                                <h3 className={style.boxTitle}>TOTAL DAYS</h3>
+                                <h3 className={style.boxNumber}>70</h3>
                             </div>
                         </div>
                         <div className={style.workDiv}>
