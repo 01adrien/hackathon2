@@ -1,0 +1,113 @@
+/* Main components */
+
+.projectDetailsBody {
+        background-image: url("../public/images/stars-background2.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-attachment: fixed;
+        min-height: 100vh;
+        display: flex;
+
+}
+
+.leftSide {
+    flex: 1 1 auto;
+}
+
+.middle {
+    padding-top: 50px;
+    flex: 1 1 auto;
+}
+
+.rigthSide {
+    flex: 1 1 auto;
+}
+
+.categoryBox {
+    background-color: #D9D9D9;
+    width: 450px;
+    height: 700px;
+    border-radius: 20px;
+}
+
+.upBorder {
+    width: 450px;
+    height: 50px;
+    background-color: #BFBFBF;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 3px #9f9c9c;
+    margin-bottom: 25px;
+}
+
+/* Ttiles */
+
+.mainTitle {
+    text-align: center;
+    font-size: 40px;
+}
+
+.cityTitle {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Progress bar */
+
+.progress {
+    margin-top: 100px;
+}
+
+.progressTitle {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: -25px;
+}
+
+.progressBar {
+    width: 80%;
+    margin: 10%;
+}
+
+/* Project detail boxes */
+
+.projectDetails {
+    display: flex;
+    justify-content: space-around;
+    margin: 5%;
+    margin-top: 80px;
+}
+
+.projectBox1 {
+    width: 100px;
+    height: 100px;
+    background-color: #BFBFBF;
+    box-shadow: 1px 3px #7f7d7d;
+    border-radius: 10px;
+
+}
+
+.projectBox2 {
+    width: 100px;
+    height: 100px;
+    background-color: #BFBFBF;
+    box-shadow: 1px 3px #7f7d7d;
+    border-radius: 10px;
+}
+
+.projectBox3 {
+    width: 100px;
+    height: 100px;
+    background-color: #BFBFBF;
+    box-shadow: 1px 3px #7f7d7d;
+    border-radius: 10px;
+}
+
+.workDiv {
+    padding-top: 50px;
+}
+
+.marsDiv {
+    margin-left: 100px;
+    margin-top: 100px;
+}
