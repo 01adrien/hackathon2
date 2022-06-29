@@ -16,6 +16,9 @@ export default function Home() {
     })
     return (
         <Layout pageTitle={'Home'}>
+            <p className="text-[3rem] text-center text-red-800 mt-40">
+                HACKATON
+            </p>
             {posts.map((post, key) => {
                 return (
                     <div key={key} className="border-t-2 pt-4 mb-4">
