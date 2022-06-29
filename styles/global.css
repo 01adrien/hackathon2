@@ -13,7 +13,7 @@ html,
 body {
     padding: 0;
     margin: 0;
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', 'Raleway', sans-serif;
     background-color: var(--main-bg-color);
 }
 

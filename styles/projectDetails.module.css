@@ -8,6 +8,7 @@
         background-attachment: fixed;
         min-height: 100vh;
         display: flex;
+        font-family: 'Raleway', sans-serif;
 }
 
 .leftSide {

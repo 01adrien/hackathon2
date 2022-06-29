@@ -7,10 +7,11 @@ import javaImg from '../../public/images/java.png'
 import phpImg from '../../public/images/php.png'
 import rocketImg from '../../public/images/rocket_stop.png'
 import style from '../../styles/projectDetails.module.css'
+import Layout from '../../components/Layout'
 
 export default function ProjectDetails() {
     return (
-        <>
+        <Layout pageTitle="project-details">
             <div className={style.projectDetailsBody}>
                 <div className={style.leftSide}>
                     <div className={style.marsDiv}>
@@ -123,6 +124,6 @@ export default function ProjectDetails() {
                     </div>
                 </div>
             </div>
-        </>
+        </Layout>
     )
 }
