@@ -52,9 +52,18 @@ export default function ProjectDetails() {
                             ></progress>
                         </div>
                         <div className={style.projectDetails}>
-                            <div className={style.projectBox1}></div>
-                            <div className={style.projectBox2}></div>
-                            <div className={style.projectBox3}></div>
+                            <div className={style.projectBox1}>
+                                <h3 className={style.boxTitle}>SPENT DAYS</h3>
+                                <h3 className={style.boxNumber}>45</h3>
+                            </div>
+                            <div className={style.projectBox2}>
+                                <h3 className={style.boxTitle}>STAFF</h3>
+                                <h3 className={style.boxNumber}>8</h3>
+                            </div>
+                            <div className={style.projectBox3}>
+                                <h3 className={style.boxTitle}>SPENT DAYS</h3>
+                                <h3 className={style.boxNumber}>45</h3>
+                            </div>
                         </div>
                         <div className={style.workDiv}>
                             <Image

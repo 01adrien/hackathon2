@@ -78,6 +78,7 @@
     justify-content: space-around;
     margin: 5%;
     margin-top: 80px;
+    text-align: center;
 }
 
 .projectBox1 {
@@ -86,7 +87,7 @@
     background-color: #BFBFBF;
     box-shadow: 1px 3px #7f7d7d;
     border-radius: 10px;
-
+    padding: 15px;
 }
 
 .projectBox2 {
@@ -95,6 +96,7 @@
     background-color: #BFBFBF;
     box-shadow: 1px 3px #7f7d7d;
     border-radius: 10px;
+    padding: 15px;
 }
 
 .projectBox3 {
@@ -103,6 +105,15 @@
     background-color: #BFBFBF;
     box-shadow: 1px 3px #7f7d7d;
     border-radius: 10px;
+    padding: 15px;
+}
+
+.boxTitle {
+    font-size: 14px;
+}
+
+.boxNumber {
+    padding-top: 5px;
 }
 
 .workDiv {
