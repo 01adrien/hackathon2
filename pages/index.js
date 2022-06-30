@@ -18,7 +18,7 @@ export default function Home() {
                     </p>
                 </div>
                 <div className="text-white flex flex-col items-center mt-28">
-                    <button class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 h-20 w-[25vw] text-black text-[1.7rem] home-button rounded-lg">
+                    <button className="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 h-20 w-[25vw] text-black text-[1.7rem] home-button rounded-lg">
                         Launch a project
                     </button>
                     <p className="font-[700] mt flex items-center mt-8">

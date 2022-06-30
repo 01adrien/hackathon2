@@ -36,7 +36,7 @@ export default function dashboard() {
                             <label htmlFor="language-select">
                                 <select
                                     id="language-select"
-                                    className="text-black font-bold cursor-pointer bg-yellow-200 py-2 my-4 rounded-md "
+                                    className="w-[100%] text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
                                     onChange={(e) =>
                                         handleChange(e.target.value)
                                     }
@@ -56,14 +56,30 @@ export default function dashboard() {
                             <label htmlFor="language-select">
                                 <select
                                     id="language-select"
-                                    className="text-black font-bold cursor-pointer bg-yellow-200 py-2 my-4 rounded-md "
+                                    className="w-[100%] text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
                                     onChange={(e) =>
                                         handleChange(e.target.value)
                                     }
                                 >
-                                    <option value="Language">Language</option>
+                                    <option value="Language">Type</option>
+                                    <option value="Java/Angular">Mobile</option>
+                                    <option value="React/Node">Web</option>
+                                    <option value="PHP/Symfony">
+                                        Software
+                                    </option>
+                                </select>
+                            </label>
+                            <label htmlFor="language-select">
+                                <select
+                                    id="language-select"
+                                    className="w-[100%] text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
+                                    onChange={(e) =>
+                                        handleChange(e.target.value)
+                                    }
+                                >
+                                    <option value="Language">Sector</option>
                                     <option value="Java/Angular">
-                                        Java/Angular
+                                        Banque/Assurance
                                     </option>
                                     <option value="React/Node">
                                         React/Node
@@ -76,21 +92,28 @@ export default function dashboard() {
                             <label htmlFor="language-select">
                                 <select
                                     id="language-select"
-                                    className="text-black font-bold cursor-pointer bg-yellow-200 py-2 my-4 rounded-md "
+                                    className="w-[100%] text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
                                     onChange={(e) =>
                                         handleChange(e.target.value)
                                     }
                                 >
-                                    <option value="Language">Language</option>
-                                    <option value="Java/Angular">
-                                        Java/Angular
+                                    <option value="Language">City</option>
+                                    <option value="Lyon">Lyon</option>
+                                    <option value="Paris">Paris</option>
+                                    <option value="Aix-en-Provence">
+                                        Aix-en-Provence
                                     </option>
-                                    <option value="React/Node">
-                                        React/Node
+                                    <option value="Bruxelles">Bruxelles</option>
+                                    <option value="Orléans">Orléans</option>
+                                    <option value="Casablanca">
+                                        Casablanca
                                     </option>
-                                    <option value="PHP/Symfony">
-                                        PHP/Symfony
+                                    <option value="Niort">Niort</option>
+                                    <option value="Nantes">Nantes</option>
+                                    <option value="Strasbourg">
+                                        Strasbourg
                                     </option>
+                                    <option value="Brest">Brest</option>
                                 </select>
                             </label>
                         </form>
