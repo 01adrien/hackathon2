@@ -24,6 +24,10 @@ body {
     box-sizing: border-box;
 }
 
+.MuiMobileStepper-dotActive {
+    background-color: black;
+  }
+  
 .home-bg {
     background-image: url('../public/images/stars-background.jpg');
 }
