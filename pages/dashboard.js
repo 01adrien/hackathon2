@@ -9,7 +9,6 @@ import blueRocketImg from '../public/images/rocket_blue.png'
 import redRocketImg from '../public/images/rocket_stop.png'
 import explosion from '../public/images/explosion.png'
 import ufo from '../public/images/ufo.png'
-const jsmediatags = require('jsmediatags')
 
 export default function dashboard() {
     const [filterLang, setFilterLang] = useState('')
@@ -211,13 +210,54 @@ export default function dashboard() {
                         </div>
                     </form>
                 </div>
-                <div className="flex fixed right-0 mr-[-56] justify-center items-center text-white my-36 ">
+                <div className="h-auto w-[60%]">
+                    <div className="project-bg h-[60vw]">
+                        <input
+                            className="w-[60vw]"
+                            onChange={(e) => setCursorValue(e.target.value)}
+                            type="range"
+                            min="0"
+                            max="1000"
+                            value={cursorValue}
+                            step="10"
+                        ></input>
+                        <button
+                            onClick={() => destroyRocket(rocketSelected)}
+                            className="text-red-80 rounded-md text-2xl py-2 px-4 fixed ml-4 mb-3"
+                        >
+                            <Image src={ufo} width={100} height={100} />
+                        </button>
+                        {rockets.length
+                            ? rockets.map((rocket, i) => (
+                                  <div className={`w-[100vw] h-[10vh]`}>
+                                      <div
+                                          style={{
+                                              marginLeft: `${rocket.progress}px`,
+                                          }}
+                                          onClick={() => changeRocket(rocket)}
+                                      >
+                                          <Image
+                                              className={` rotate-90 h-[100%] `}
+                                              src={rocket.src}
+                                              width={200}
+                                              height={200}
+                                          />
+                                      </div>
+                                  </div>
+                              ))
+                            : null}
+                    </div>
+                </div>
+                <div
+                    div
+                    className="flex fixed right-0 mr-[-56] justify-center items-center text-white my-36 "
+                >
                     <Image
                         src={redPlanetImg}
                         alt="mars-picture"
-                        className="rounded-l-full"
-                        width={180}
-                        height={350}
+                        className="rounded-l-full h-[80vh]"
+                        width={250}
+                        height={600}
                     ></Image>
                 </div>
             </div>
