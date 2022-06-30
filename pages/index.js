@@ -2,6 +2,7 @@ import React from 'react'
 import logoImg from '../public/images/logoAbside.png'
 import Image from 'next/image'
 import Head from 'next/Head'
+import Link from 'next/link'
 import { useRouter } from 'next/router'
 
 export default function Home() {
@@ -21,13 +22,14 @@ export default function Home() {
                             One Project = One Rocket
                         </p>
                     </div>
-                    <p className="text-[70px]">🚀</p>
+                    <p className="text-[70px] animate-bounce">🚀</p>
                 </div>
                 <div className="text-white flex flex-col items-center mt-8">
-                    <button className="bg-blue-500 hover:bg-blue-700 hover:scale-110 font-bold py-2 px-4 h-20 w-[32vw] text-black text-[1.3rem] home-button rounded-lg uppercase">
-                        Launch a rocket
-                    </button>
-
+                    <Link href="/launch">
+                        <button className="bg-blue-500 hover:bg-blue-700 hover:scale-110 font-bold py-2 px-4 h-20 w-[32vw] text-black text-[1.3rem] home-button rounded-lg uppercase z-30">
+                            Launch a rocket
+                        </button>
+                    </Link>
                     <p className="font-[500] flex items-center mt-8">
                         or explore
                         <span
