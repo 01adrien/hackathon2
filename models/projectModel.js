@@ -54,8 +54,8 @@ export async function createProject(
     const [{ insertId }] = await db
         .promise()
         .query(
-            'INSERT INTO project (name, type, sector, city, tech1, tech2, tech3) VALUES (?, ?, ?, ?, ?, ?, ?)',
-            [name, type, sector, city, tech1, tech2, tech3]
+            'INSERT INTO project (name, type, sector, city, description, tech1, tech2, tech3) VALUES (?, ?, ?, ?, ?, ?, ?, ?)',
+            [name, type, sector, city, description, tech1, tech2, tech3]
         )
     return { name, insertId }
 }
