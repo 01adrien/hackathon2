@@ -2,6 +2,7 @@ import React, { useContext } from 'react'
 import MobileStepper from '@mui/material/MobileStepper'
 import Button from '@mui/material/Button'
 import { useRouter } from 'next/router'
+import useSound from 'use-sound'
 
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
@@ -15,6 +16,7 @@ export default function ProgressStepper({
     const router = useRouter()
 
     const { projectData } = useContext(createRocketContext)
+    const [decollage] = useSound('/sounds/decollage.mp3')
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1)
@@ -26,9 +28,10 @@ export default function ProgressStepper({
     }
 
     const launch = async () => {
+        decollage()
         console.log(projectData)
-        setIsLaunching(true)
-        setTimeout(() => router.push('./dashboard'), 4000)
+        setTimeout(() => setIsLaunching(true), 3000)
+        setTimeout(() => router.push('./dashboard'), 8000)
     }
 
     if (activeStep < 5) {
