@@ -42,14 +42,14 @@ export async function getTechnosProjectById(id) {
 
 // ------------------------- ADD --------------- //
 
-export async function createProject(name, type, sector, city) {
+export async function createProject(name, type, sector, city, description) {
     const [{ insertId }] = await db
         .promise()
         .query(
-            'INSERT INTO project (name, type, sector, city) VALUES (?, ?, ?, ?)',
-            [name, type, sector, city]
+            'INSERT INTO project (name, type, sector, city, description) VALUES (?, ?, ?, ?, ?)',
+            [name, type, sector, city, description]
         )
-    return { name, type, sector, city, insertId }
+    return { name, type, sector, city, insertId, description }
 }
 
 export async function addTechnosProject(project_id, technos_id) {

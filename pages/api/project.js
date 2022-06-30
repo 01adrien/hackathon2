@@ -14,8 +14,14 @@ export default async function handleAllProject(req, res) {
         res.status(200).send(allprojects)
     }
     if (req.method == 'POST') {
-        const { name, type, sector, city } = req.body
-        const newProject = await createProject(name, type, sector, city)
+        const { name, type, sector, city, description } = req.body
+        const newProject = await createProject(
+            name,
+            type,
+            sector,
+            city,
+            description
+        )
         res.status(201).send(newProject)
     }
 }
