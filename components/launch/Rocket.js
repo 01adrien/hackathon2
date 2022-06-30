@@ -15,20 +15,22 @@ export default function Rocket({ activeStep, isLaunching }) {
     }, [color, activeStep, isLaunching])
 
     return (
-        <div className="flex flex-col justify-center m-10 p-10">
+        <div className="flex flex-col justify-center ml-10 pl-10 pr-10 mr-10 h-[100vh]">
             {!isLaunching ? (
                 <div className={styles.rocketConstruction}>
-                    <div className={styles.rocketPart0}>
-                        {' '}
-                        <Image
-                            src={`/images/rocket/${color}/rocket_${
-                                activeStep - 1
-                            }.png`}
-                            alt="Picture of rocket"
-                            width={500}
-                            height={500}
-                        />
-                    </div>
+                    {activeStep > 0 && (
+                        <div className={styles.rocketPart0}>
+                            {' '}
+                            <Image
+                                src={`/images/rocket/${color}/rocket_${
+                                    activeStep - 1
+                                }.png`}
+                                alt="Picture of rocket"
+                                width={500}
+                                height={500}
+                            />
+                        </div>
+                    )}
                     <div key={rocketImg} className={styles.rocketPart1}>
                         {' '}
                         <Image
@@ -40,23 +42,27 @@ export default function Rocket({ activeStep, isLaunching }) {
                     </div>
                 </div>
             ) : (
-                <div className="flex flex-col justify-center">
-                    <Image
-                        key={`/images/rocket/${color}/rocket_5.png`}
-                        src={`/images/rocket/${color}/rocket_5.png`}
-                        alt="Picture of rocket"
-                        width={500}
-                        height={500}
-                        className={styles.rocketLaunch}
-                    />
-                    <Image
-                        key={'cloud'}
-                        src="/images/cloud2.png"
-                        alt="Picture of rocket"
-                        width={300}
-                        height={250}
-                        className={styles.smoke}
-                    />
+                <div className={styles.rocketConstruction}>
+                    <div className={styles.rocketLaunch}>
+                        {' '}
+                        <Image
+                            key={`/images/rocket/${color}/rocket_5.png`}
+                            src={`/images/rocket/${color}/rocket_5.png`}
+                            alt="Picture of rocket"
+                            width={500}
+                            height={500}
+                        />
+                    </div>
+                    <div className={styles.smoke}>
+                        {' '}
+                        <Image
+                            key={'cloud'}
+                            src="/images/cloud2.png"
+                            alt="Picture of rocket"
+                            width={500}
+                            height={250}
+                        />
+                    </div>
                 </div>
             )}
         </div>

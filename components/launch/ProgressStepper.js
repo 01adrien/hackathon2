@@ -1,10 +1,10 @@
 import React, { useContext } from 'react'
 import MobileStepper from '@mui/material/MobileStepper'
 import Button from '@mui/material/Button'
+import { useRouter } from 'next/router'
 
 import ArrowCircleLeftIcon from '@mui/icons-material/ArrowCircleLeft'
 import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
-import Link from 'next/link'
 import createRocketContext from '../../context/CreateRocketContext'
 
 export default function ProgressStepper({
@@ -12,6 +12,8 @@ export default function ProgressStepper({
     setActiveStep,
     setIsLaunching,
 }) {
+    const router = useRouter()
+
     const { projectData } = useContext(createRocketContext)
 
     const handleNext = () => {
@@ -26,6 +28,7 @@ export default function ProgressStepper({
     const launch = async () => {
         console.log(projectData)
         setIsLaunching(true)
+        setTimeout(() => router.push('./dashboard'), 4000)
     }
 
     if (activeStep < 5) {

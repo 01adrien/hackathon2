@@ -97,15 +97,19 @@ color: #000000;
 /* Animation pour la fusée */
 .rocketConstruction{
     position: relative;
-    width: 500px;
-    height: 500px;
+    width: 600px;
+    height: 1000px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 
 .rocketPart0{
     position: absolute;
     z-index:10;
-    top: 0;
+    bottom: 100px;
     left: 0;
 }
 
@@ -113,7 +117,7 @@ color: #000000;
     animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
     transition: 2s;
     position: absolute;
-    top: 0;
+    bottom: 100px;
     left: 0;
 }
 
@@ -135,31 +139,34 @@ color: #000000;
   }
 
 .rocketLaunch{
+    position: absolute;
     animation: puff-in-center 3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+    bottom: 100px;
+    left: 0;
 
   
 }
 
-@keyframes puff-in-center-cloud {
+@keyframes puff-in-center {
     0% {
-        transform: scale(1.5);
-        filter: blur(4px);
     }
     50% {
-              transform: scale(1);
               filter: blur(0px);
-              transform: translate(100px);
             }
     100% {
-        transform: scale(1);
-        filter: blur(0px);
+        transform: scale(0.01);
+        filter: blur(10px);
+        transform: translate(0, -800px);
 }
   }
   
 
 .smoke {
+    position: absolute;
+bottom: 100px;
+left: 0;
     animation: puff-in-center-cloud 2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
-
+z-index: 10;
 }
 
 @keyframes puff-in-center-cloud {
