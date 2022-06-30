@@ -14,7 +14,7 @@ export default function Summary({ board }) {
             <div className="m-5">
                 Tools :
                 {board.map((techno) => (
-                    <li className="text-sm" key={techno.id}>
+                    <li className="text-[18px]" key={techno.id}>
                         {techno.name}
                     </li>
                 ))}

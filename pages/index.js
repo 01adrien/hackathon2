@@ -4,12 +4,9 @@ import Image from 'next/image'
 import Head from 'next/Head'
 import { useRouter } from 'next/router'
 import useSound from 'use-sound'
-import bipSfx from '../public/images/sounds/bip.mp3'
 
 export default function Home() {
     const router = useRouter()
-
-    const [play] = useSound(bipSfx)
 
     return (
         <>
