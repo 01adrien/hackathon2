@@ -12,10 +12,11 @@ export default function MainDataForm() {
         <div>
             <form className="flex flex-col justify-between items-start">
                 <label className={styles.mainDataLabel}>
-                    Project Name :{' '}
+                    Project name :{' '}
                     <input
+                        required
                         type="text"
-                        className="rounded-lg p-5 shadow-inner"
+                        className="rounded-lg p-5 shadow-inner shadow-gray-400"
                         placeholder="Mission: Impossible"
                         value={projectData?.name}
                         onChange={(e) =>
@@ -30,8 +31,9 @@ export default function MainDataForm() {
                 <label className={styles.mainDataLabel}>
                     Budget :{' '}
                     <input
-                        className="rounded-lg p-5 shadow-inner"
-                        type="text"
+                        required
+                        className="rounded-lg p-5 shadow-inner shadow-gray-400"
+                        type="number"
                         name="currency-field"
                         id="currency-field"
                         pattern="^\$\d{1,3}(,\d{3})*(\.\d+)?$"
@@ -48,9 +50,10 @@ export default function MainDataForm() {
                 </label>
 
                 <label className={styles.mainDataLabel}>
-                    Number of explorer :{' '}
+                    Number of explorers :{' '}
                     <input
-                        className="rounded-lg p-5 shadow-inner"
+                        required
+                        className="rounded-lg p-5 shadow-inner shadow-gray-400"
                         type="number"
                         value={projectData?.explorerNb}
                         placeholder="0"
