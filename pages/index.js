@@ -2,11 +2,14 @@ import React from 'react'
 import logoImg from '../public/images/logoAbside.png'
 import Image from 'next/image'
 import Head from 'next/Head'
-import Link from 'next/link'
 import { useRouter } from 'next/router'
+import useSound from 'use-sound'
+import bipSfx from '../public/images/sounds/bip.mp3'
 
 export default function Home() {
     const router = useRouter()
+
+    const [play] = useSound(bipSfx)
 
     return (
         <>
@@ -24,17 +27,22 @@ export default function Home() {
                     </div>
                     <p className="text-[70px] animate-bounce">🚀</p>
                 </div>
-                <div className="text-white flex flex-col items-center mt-8">
-                    <Link href="/launch">
-                        <button className="bg-blue-500 hover:bg-blue-700 hover:scale-110 font-bold py-2 px-4 h-20 w-[32vw] text-black text-[1.3rem] home-button rounded-lg uppercase z-30">
-                            Launch a rocket
-                        </button>
-                    </Link>
-                    <p className="font-[500] flex items-center mt-8">
+                <div className="text-white flex flex-col items-center mt-12">
+                    <button
+                        onClick={() => router.push('/launch')}
+                        className="bg-blue-500 hover:bg-blue-700 hover:scale-110 font-bold py-2 px-4 h-20 w-[22vw] text-black text-[1.7rem] home-button rounded-lg"
+                    >
+                        Launch a rocket
+                    </button>
+                    <p className="font-[700] mt flex items-center mt-8">
                         or explore
                         <span
                             className="ml-5 mr-5 hover:scale-110 cursor-pointer"
                             onClick={() => router.push('/dashboard')}
+                            onClicl={(event) => {
+                                router.push('/dashboard')
+                                play
+                            }}
                         >
                             <Image
                                 src={logoImg}

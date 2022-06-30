@@ -25,7 +25,7 @@ export default function TechnoForm() {
             </div>
             {
                 <div className="text-xl font-bold">
-                    Dont' forget your blaster sir !
+                    Don&apos;t forget your blaster sir !
                 </div>
             }
         </div>
