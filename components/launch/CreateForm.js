@@ -18,6 +18,7 @@ export default function CreateForm({
     setActiveStep,
     setIsLaunching,
     setColor,
+    board,
 }) {
     useEffect(() => {}, [activeStep])
 
@@ -34,7 +35,7 @@ export default function CreateForm({
                     )}
                     {activeStep === 3 && <TechnoForm />}
                     {activeStep === 4 && <DescriptionForm />}
-                    {activeStep === 5 && <Summary />}
+                    {activeStep === 5 && <Summary board={board} />}
                     <ProgressStepper
                         activeStep={activeStep}
                         setActiveStep={setActiveStep}

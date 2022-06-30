@@ -8,6 +8,7 @@ export default function ProjectTypeForm({ setColor }) {
 
     return (
         <div className="flex flex-col items-center justify-around mb-20">
+            What are we going to do ?
             <div className="flex flex-row items-center justify-around mb-20">
                 <div
                     onClick={(e) => {

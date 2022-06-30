@@ -9,6 +9,7 @@ export default function Launch() {
     const [activeStep, setActiveStep] = useState(0)
     const [isLaunching, setIsLaunching] = useState(false)
     const [color, setColor] = useState('red')
+    const [board, setBoard] = useState([])
 
     return (
         <CreateRocketContextProvider>
@@ -19,12 +20,15 @@ export default function Launch() {
                         setActiveStep={setActiveStep}
                         setIsLaunching={setIsLaunching}
                         setColor={setColor}
+                        board={board}
                     />
                     <Rocket
                         activeStep={activeStep}
                         setActiveStep={setActiveStep}
                         isLaunching={isLaunching}
                         color={color}
+                        board={board}
+                        setBoard={setBoard}
                     />
                 </div>
             </Layout>

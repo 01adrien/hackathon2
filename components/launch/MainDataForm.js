@@ -16,7 +16,7 @@ export default function MainDataForm() {
                     <input
                         type="text"
                         className="rounded-lg p-5 shadow-inner"
-                        placeholder="Mission Impossible"
+                        placeholder="Mission: Impossible"
                         value={projectData?.name}
                         onChange={(e) =>
                             setProjectData({

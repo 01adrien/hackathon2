@@ -7,6 +7,7 @@ export default function SectorForm() {
 
     return (
         <div className="flex flex-col items-center justify-around mb-20">
+            Where are we going Captain?{' '}
             <div className="flex flex-row items-center justify-around mb-20">
                 <div
                     onClick={(e) =>
