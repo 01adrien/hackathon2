@@ -3,11 +3,12 @@ import React, { useState, useEffect } from 'react'
 import style from '../../styles/dashboard.module.css'
 import Layout from '../../components/layout'
 import Image from 'next/image'
-import yellowRocketImg from '../../public/images/rocket_y.png'
-import blueRocketImg from '../../public/images/rocket_blue.png'
-import redRocketImg from '../../public/images/rocket_stop.png'
-import explosion from '../../public/images/explosion.png'
-import ufo from '../../public/images/ufo.png'
+import redPlanetImg from '../public/images/redPlanet.png'
+import yellowRocketImg from '../public/images/rocket_y.png'
+import blueRocketImg from '../public/images/rocket_blue.png'
+import redRocketImg from '../public/images/rocket_stop.png'
+import explosion from '../public/images/explosion.png'
+import ufo from '../public/images/ufo.png'
 
 export default function dashboard() {
     const [filterLang, setFilterLang] = useState('')
@@ -210,7 +211,7 @@ export default function dashboard() {
                         ></input>
                         <button
                             onClick={() => destroyRocket(rocketSelected)}
-                            className="text-red-80 rounded-md text-2xl py-2 px-4 fixed ml-4 mb-3 mt-10"
+                            className="text-red-80 rounded-md text-2xl py-2 px-4 fixed ml-4 mb-3"
                         >
                             <Image src={ufo} width={100} height={100} />
                         </button>

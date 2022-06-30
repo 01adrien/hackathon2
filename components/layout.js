@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
-import rocketlogoImg from '../public/images/rocket_stopl.png'
+import rocketlogoImg from '../public/images/rocket_stop.png'
 import Link from 'next/link'
 
 export default function Layout({ children, pageTitle }) {

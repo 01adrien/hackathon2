@@ -8,7 +8,7 @@ import phpImg from '../../public/images/php.png'
 import rocketImg from '../../public/images/rocket_stop.png'
 import flecheImg from '../../public/images/flecherouge.png'
 import style from '../../styles/projectDetails.module.css'
-import Layout from '../../components/Layout'
+import Layout from '../../components/layout'
 
 export default function ProjectDetails() {
     return (

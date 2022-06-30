@@ -9,27 +9,20 @@ import redRocketImg from '../../public/images/rocket/red/rocket_5.png'
 import explosion from '../../public/images/explosion.png'
 import ufo from '../../public/images/ufo.png'
 import Popup from '../../components/popup'
+import useSound from 'use-sound'
+import { useRouter } from 'next/router'
 
 export default function dashboard() {
+    const router = useRouter()
     const [filterLang, setFilterLang] = useState('')
     const [openPopup, setOpenPopup] = useState(false)
+    const [audio] = useSound('/sounds/SFB-explosion2.mp3')
+    const [audio2] = useSound('/sounds/laserGun.mp3')
     const handleChange = (value) => {
         setFilterLang(!filterLang)
     }
-
-    function shoot() {
-        jsmediatags.read('../public/images/laserGun.mp3', {
-            onSuccess: function (tag) {
-                console.log(tag)
-            },
-            onError: function (error) {
-                console.log(':(', error.type, error.info)
-            },
-        })
-    }
-
-    const rocketNumber = 7
-    const defaultPosition = [2, 7, 1, 4, 5, 8, 2]
+    const [rocketNumber, setRocketNumber] = useState(7)
+    const defaultPosition = [2, 7, 1, 4, 5, 8, 2, 5, 7, 9, 2, 3]
     const rocketPicture = [blueRocketImg, yellowRocketImg, redRocketImg]
     const [cursorValue, setCursorValue] = useState(0)
     const [rocketSelected, setRocketSelected] = useState({})
@@ -65,8 +58,10 @@ export default function dashboard() {
     }
 
     function destroyRocket() {
+        audio2()
         rocketSelected.src = explosion.src
         setTimeout(() => setRocketDestroy(!rocketDestroy), 200)
+        setTimeout(() => audio(), 300)
         setTimeout(
             () => setRockets(rockets.filter((r) => r.id !== rocketSelected.id)),
             700
@@ -97,7 +92,24 @@ export default function dashboard() {
                                         className="w-[100%] text-black font-bold hover:bg-yellow-200"
                                         rows="1"
                                         name="message"
-                                        onChange={(e) => e.target.value}
+                                        onChange={() => {
+                                            setRockets(
+                                                new Array(11)
+                                                    .fill()
+                                                    .map((_, i) => ({
+                                                        progress:
+                                                            defaultPosition[i] *
+                                                            100,
+                                                        ...rocketPicture[
+                                                            Math.floor(
+                                                                Math.random() *
+                                                                    3
+                                                            )
+                                                        ],
+                                                        id: i,
+                                                    }))
+                                            )
+                                        }}
                                         placeholder="search a rocket"
                                     />
                                 </label>
@@ -106,28 +118,30 @@ export default function dashboard() {
                                 <select
                                     id="language-select"
                                     className="w-[10vw] shadow-md shadow-gray-300 text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
-                                    onChange={(e) =>
-                                        handleChange(e.target.value)
-                                    }
                                 >
-                                    <option value="Language">Language</option>
-                                    <option value="Java/Angular">
-                                        Java/Angular
-                                    </option>
-                                    <option value="React/Node">
-                                        React/Node
-                                    </option>
-                                    <option value="PHP/Symfony">
-                                        PHP/Symfony
-                                    </option>
+                                    <option value="4">Language</option>
+                                    <option value="3">Java/Angular</option>
+                                    <option value="7">React/Node</option>
+                                    <option value="0">PHP/Symfony</option>
                                 </select>
                             </label>
                             <label htmlFor="language-Type">
                                 <select
                                     id="type-select"
                                     className="w-[10vw] shadow-md shadow-gray-300 text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
-                                    onChange={(e) =>
-                                        handleChange(e.target.value)
+                                    onChange={() =>
+                                        setRockets(
+                                            new Array(9).fill().map((_, i) => ({
+                                                progress:
+                                                    defaultPosition[i] * 100,
+                                                ...rocketPicture[
+                                                    Math.floor(
+                                                        Math.random() * 3
+                                                    )
+                                                ],
+                                                id: i,
+                                            }))
+                                        )
                                     }
                                 >
                                     <option value="Language">Type</option>
@@ -142,8 +156,19 @@ export default function dashboard() {
                                 <select
                                     id="sector-select"
                                     className="w-[10vw] text-black  shadow-md shadow-gray-300 font-bold cursor-pointer hover:bg-yellow-200  py-2 my-6 rounded-md "
-                                    onChange={(e) =>
-                                        handleChange(e.target.value)
+                                    onChange={() =>
+                                        setRockets(
+                                            new Array(4).fill().map((_, i) => ({
+                                                progress:
+                                                    defaultPosition[i] * 100,
+                                                ...rocketPicture[
+                                                    Math.floor(
+                                                        Math.random() * 3
+                                                    )
+                                                ],
+                                                id: i,
+                                            }))
+                                        )
                                     }
                                 >
                                     <option value="Language">Sector</option>
@@ -174,7 +199,18 @@ export default function dashboard() {
                                     id="language-select"
                                     className="w-[10vw] text-black  shadow-md shadow-gray-300 font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
                                     onChange={(e) =>
-                                        handleChange(e.target.value)
+                                        setRockets(
+                                            new Array(7).fill().map((_, i) => ({
+                                                progress:
+                                                    defaultPosition[i] * 100,
+                                                ...rocketPicture[
+                                                    Math.floor(
+                                                        Math.random() * 3
+                                                    )
+                                                ],
+                                                id: i,
+                                            }))
+                                        )
                                     }
                                 >
                                     <option value="Language">City</option>
@@ -211,7 +247,9 @@ export default function dashboard() {
                             step="10"
                         ></input>
                         <button
-                            onClick={() => destroyRocket(rocketSelected)}
+                            onClick={() => {
+                                destroyRocket(rocketSelected)
+                            }}
                             className="text-red-80 rounded-md text-2xl py-2 px-4 fixed ml-4 mb-3 mt-10"
                         >
                             <Image src={ufo} width={100} height={100} />
@@ -240,7 +278,27 @@ export default function dashboard() {
             </div>
             {openPopup ? (
                 <Popup
-                    content={`projet numero ${rocketSelected.id}`}
+                    content={
+                        <div className="text-center">
+                            <p className="text-center text-xl mb-2 font-[600]">
+                                projet numero {rocketSelected.id + 1}
+                            </p>
+                            <p>Curabitur urna quam, commodo non dictum at,</p>
+                            <p>Curabitur urna quam, commodo non dictum at,</p>
+                            <button
+                                onClick={() =>
+                                    router.push(
+                                        `/project-details/${
+                                            rocketSelected.id + 1
+                                        }`
+                                    )
+                                }
+                                className="bg-red-500 py-2 px-4 mt-5 hover:bg-red-700 rounded-md"
+                            >
+                                Open project
+                            </button>
+                        </div>
+                    }
                     handleClose={() => setOpenPopup(false)}
                 />
             ) : null}
