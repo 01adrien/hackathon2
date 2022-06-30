@@ -20,8 +20,7 @@ export default function CreateForm({ activeStep, setActiveStep }) {
         <CreateRocketContextProvider>
             <div className={styles.formBox}>
                 <div className={styles.topBox}></div>
-                <h1 className={styles.title}>Launch your Project</h1>
-                <h2>active step : {activeStep}</h2>
+                <h1 className={styles.title}>DEFINE YOUR MISSION</h1>
                 <div className="flex flex-col h-[100%] justify-center items-center">
                     {activeStep === 0 && <MainDataForm />}
                     {activeStep === 1 && <SectorForm />}

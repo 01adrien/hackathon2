@@ -8,7 +8,8 @@ import Link from 'next/link'
 import createRocketContext from '../../context/CreateRocketContext'
 
 export default function ProgressStepper({ activeStep, setActiveStep }) {
-    const { setProjectData, projectData } = useContext(createRocketContext)
+    const { setProjectData, projectData, setIsLaunching } =
+        useContext(createRocketContext)
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1)
@@ -18,8 +19,9 @@ export default function ProgressStepper({ activeStep, setActiveStep }) {
         setActiveStep((prevActiveStep) => prevActiveStep - 1)
     }
 
-    const submitSeanceForm = async () => {
+    const launch = async () => {
         console.log(projectData)
+        setIsLaunching(true)
     }
 
     if (activeStep < 5) {
@@ -31,9 +33,10 @@ export default function ProgressStepper({ activeStep, setActiveStep }) {
                 activeStep={activeStep}
                 sx={{
                     height: '80px',
-                    width: '80%',
+                    width: '25vw',
+                    position: 'absolute',
+                    bottom: '100px',
                     background: 'none',
-                    flexGrow: 1,
                     '& .MuiLinearProgress-bar': {
                         background: '#F98F83',
                     },
@@ -45,8 +48,8 @@ export default function ProgressStepper({ activeStep, setActiveStep }) {
                     <Button
                         size="small"
                         onClick={handleNext}
-                        disabled={activeStep === 5}
-                        sx={{ color: '#F98F83' }}
+                        disabled={activeStep === 6}
+                        sx={{ color: 'black' }}
                     >
                         <ArrowCircleRightIcon
                             sx={{
@@ -61,7 +64,7 @@ export default function ProgressStepper({ activeStep, setActiveStep }) {
                         size="small"
                         onClick={handleBack}
                         disabled={activeStep === 0}
-                        sx={{ color: '#F98F83' }}
+                        sx={{ color: 'black' }}
                     >
                         <ArrowCircleLeftIcon
                             sx={{
@@ -75,12 +78,21 @@ export default function ProgressStepper({ activeStep, setActiveStep }) {
         )
     } else {
         return (
-            <div>
+            <div
+                style={{
+                    height: '80px',
+                    position: 'absolute',
+                    bottom: '100px',
+                    background: 'none',
+                    display: 'flex',
+                    flexDirection: 'column-reverse',
+                }}
+            >
                 <Button
                     size="small"
                     onClick={handleBack}
                     disabled={activeStep === 0}
-                    sx={{ color: '#F98F83' }}
+                    sx={{ color: 'black' }}
                 >
                     <ArrowCircleLeftIcon
                         sx={{
@@ -90,21 +102,21 @@ export default function ProgressStepper({ activeStep, setActiveStep }) {
                     />
                 </Button>
 
-                <Link href="/seances">
-                    <Button
-                        onClick={submitSeanceForm}
-                        style={{
-                            width: '150px',
-                            height: '50px',
-                            background: '#F98F83',
-                            color: 'white',
-                            borderRadius: '20px',
-                            fontWeight: 'bolder',
-                        }}
-                    >
-                        Confirmer
-                    </Button>
-                </Link>
+                <Button
+                    onClick={launch}
+                    style={{
+                        width: '200px',
+                        height: '100px',
+                        background: 'red',
+                        color: 'white',
+                        borderRadius: '20px',
+                        fontWeight: 'bolder',
+                        border: 'solid black 0.4rem',
+                        fontSize: '1.5rem',
+                    }}
+                >
+                    LAUNCH
+                </Button>
             </div>
         )
     }

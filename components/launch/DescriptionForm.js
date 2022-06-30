@@ -1,5 +1,6 @@
 import React, { useContext } from 'react'
 import createRocketContext from '../../context/CreateRocketContext'
+import styles from '../../styles/launch.module.css'
 
 export default function DescriptionForm() {
     const { projectData, setProjectData } = useContext(createRocketContext)
@@ -11,8 +12,13 @@ export default function DescriptionForm() {
     return (
         <div>
             <form>
-                <label>
-                    Description : <textarea onChange={handleChange} />
+                <label className={styles.descriptionLabel}>
+                    <div className="text-xl font-bold 		mb-5">Description : </div>
+                    <textarea
+                        onChange={handleChange}
+                        className="min-w-[40vw] h-[40vh] rounded-lg p-5 shadow-inner"
+                        placeholder="Décrivez ici les instructions de la mission"
+                    />
                 </label>
             </form>
         </div>

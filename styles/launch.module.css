@@ -22,6 +22,8 @@
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    box-shadow: 4px 4px #9f9c9c;
+
 
 }
 
@@ -57,3 +59,37 @@ text-align: center;
 color: #000000;
 
 }
+
+.types {
+    width: 100px;
+    height: 50px;
+    background-color: #BFBFBF;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.technos {
+    width: 100px;
+    height: 50px;
+    background-color: #BFBFBF;
+    margin: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.mainDataLabel {
+    margin:20px;
+    display: flex;
+    flex-direction: column;
+}
+
+.descriptionLabel{
+    display: flex;
+    flex-direction: column;
+}
+

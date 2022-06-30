@@ -24,3 +24,8 @@ body {
     outline: none;
     box-sizing: border-box;
 }
+
+.MuiMobileStepper-dotActive {
+    background-color: black;
+  }
+  
