@@ -1,4 +1,8 @@
 import Head from 'next/head'
+import Image from 'next/image'
+import rocketlogoImg from '../public/images/rocket_stopl.png'
+import Link from 'next/link'
+import { useState } from 'react'
 
 export default function Layout({ children, pageTitle }) {
     return (
@@ -10,6 +14,18 @@ export default function Layout({ children, pageTitle }) {
                 />
                 <title>{pageTitle}</title>
             </Head>
+            <div className="flex absolute right-0 top-0 pt-3">
+                <Link href="/">
+                    <Image
+                        src={rocketlogoImg}
+                        alt=""
+                        width={60}
+                        height={40}
+                        className="cursor-pointer hover:animate-spin p-2"
+                    ></Image>
+                </Link>
+                <p className="text-lg text-white font-bold p-2">Home</p>
+            </div>
             {children}
         </>
     )

@@ -10,17 +10,23 @@
     },
     "dependencies": {
         "axios": "^0.27.2",
+        "howler": "^2.2.3",
         "mysql2": "^2.3.3",
         "next": "12.2.0",
+        "next-images": "^1.8.4",
         "prettier": "^2.7.1",
         "react": "18.2.0",
+        "react-audio-player": "^0.17.0",
         "react-dom": "18.2.0",
-        "react-icons": "^4.4.0"
+        "react-icons": "^4.4.0",
+        "typewriter-effect": "^2.19.0",
+        "use-sound": "^4.0.1"
     },
     "devDependencies": {
         "autoprefixer": "^10.4.7",
         "eslint": "^8.18.0",
         "eslint-config-next": "12.2.0",
+        "file-loader": "^6.2.0",
         "postcss": "^8.4.14",
         "tailwindcss": "^3.1.4"
     }
