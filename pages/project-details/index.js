@@ -129,6 +129,7 @@ export default function ProjectDetails() {
                                 alt="java-img"
                                 width={300}
                                 height={400}
+                                className={style.rocket}
                             />
                         </div>
                     </div>

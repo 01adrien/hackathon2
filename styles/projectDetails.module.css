@@ -172,6 +172,11 @@
     transform: rotate(20deg);
 }
 
+.rocket:hover {
+    transform: rotate(60deg);
+    transform: scale(110%);
+}
+
 .flecheDiv {
     padding-left: 50px;
 }
