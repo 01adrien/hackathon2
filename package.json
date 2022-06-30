@@ -17,6 +17,7 @@
         "@mui/icons-material": "^5.8.4",
         "@mui/material": "^5.8.6",
         "axios": "^0.27.2",
+        "draggable": "^4.2.0",
         "howler": "^2.2.3",
         "mysql2": "^2.3.3",
         "next": "12.2.0",

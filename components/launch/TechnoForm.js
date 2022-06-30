@@ -12,6 +12,7 @@ export default function TechnoForm() {
         >
             {' '}
             What weapons do we need ?
+            <p className=" py-3 text-base">Drag the weapons to the rocket</p>
             <div className="flex flex-row justify-center items-center  flex-wrap m-10	 ">
                 {technolist?.map((techno) => {
                     return (
@@ -25,7 +26,7 @@ export default function TechnoForm() {
             </div>
             {
                 <div className="text-xl font-bold">
-                    Dont' forget your blaster sir !
+                    Don&apos;t forget your blaster sir !
                 </div>
             }
         </div>
