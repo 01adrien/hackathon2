@@ -93,3 +93,91 @@ color: #000000;
     flex-direction: column;
 }
 
+
+/* Animation pour la fusée */
+.rocketConstruction{
+    position: relative;
+    width: 500px;
+    height: 500px;
+}
+
+
+.rocketPart0{
+    position: absolute;
+    z-index:10;
+    top: 0;
+    left: 0;
+}
+
+.rocketPart1{
+    animation: fade-in 3s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+    transition: 2s;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+
+@keyframes fade-in {
+    
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+
+    }
+    0% {
+        opacity: 0;
+  
+      }
+  }
+
+.rocketLaunch{
+    animation: puff-in-center 3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+
+  
+}
+
+@keyframes puff-in-center-cloud {
+    0% {
+        transform: scale(1.5);
+        filter: blur(4px);
+    }
+    50% {
+              transform: scale(1);
+              filter: blur(0px);
+              transform: translate(100px);
+            }
+    100% {
+        transform: scale(1);
+        filter: blur(0px);
+}
+  }
+  
+
+.smoke {
+    animation: puff-in-center-cloud 2s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+
+}
+
+@keyframes puff-in-center-cloud {
+    0% {
+        transform: scale(1);
+              filter: blur(4px);
+              opacity: 0;
+    }
+    50% {
+              transform: scale(1.2);
+              filter: blur(0px);
+              opacity: 1;
+    }
+
+    100% {
+        transform: scale(1.5);
+        filter: blur(10px);
+        opacity: 0;
+}
+  }
+  

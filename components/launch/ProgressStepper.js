@@ -7,9 +7,12 @@ import ArrowCircleRightIcon from '@mui/icons-material/ArrowCircleRight'
 import Link from 'next/link'
 import createRocketContext from '../../context/CreateRocketContext'
 
-export default function ProgressStepper({ activeStep, setActiveStep }) {
-    const { setProjectData, projectData, setIsLaunching } =
-        useContext(createRocketContext)
+export default function ProgressStepper({
+    activeStep,
+    setActiveStep,
+    setIsLaunching,
+}) {
+    const { projectData } = useContext(createRocketContext)
 
     const handleNext = () => {
         setActiveStep((prevActiveStep) => prevActiveStep + 1)
@@ -17,6 +20,7 @@ export default function ProgressStepper({ activeStep, setActiveStep }) {
 
     const handleBack = () => {
         setActiveStep((prevActiveStep) => prevActiveStep - 1)
+        setIsLaunching(false)
     }
 
     const launch = async () => {

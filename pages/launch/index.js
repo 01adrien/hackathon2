@@ -7,6 +7,7 @@ import styles from '../../styles/launch.module.css'
 
 export default function Launch() {
     const [activeStep, setActiveStep] = useState(0)
+    const [isLaunching, setIsLaunching] = useState(false)
 
     return (
         <CreateRocketContextProvider>
@@ -15,10 +16,12 @@ export default function Launch() {
                     <CreateForm
                         activeStep={activeStep}
                         setActiveStep={setActiveStep}
+                        setIsLaunching={setIsLaunching}
                     />
                     <Rocket
                         activeStep={activeStep}
                         setActiveStep={setActiveStep}
+                        isLaunching={isLaunching}
                     />
                 </div>
             </Layout>

@@ -13,7 +13,11 @@ import TechnoForm from './TechnoForm'
 import styles from '../../styles/launch.module.css'
 import Image from 'next/image'
 
-export default function CreateForm({ activeStep, setActiveStep }) {
+export default function CreateForm({
+    activeStep,
+    setActiveStep,
+    setIsLaunching,
+}) {
     useEffect(() => {}, [activeStep])
 
     return (
@@ -31,6 +35,7 @@ export default function CreateForm({ activeStep, setActiveStep }) {
                     <ProgressStepper
                         activeStep={activeStep}
                         setActiveStep={setActiveStep}
+                        setIsLaunching={setIsLaunching}
                     />
                 </div>
                 <div className={styles.bottomBox}></div>{' '}
