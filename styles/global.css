@@ -29,3 +29,19 @@ body {
     background-color: black;
   }
   
+.home-bg {
+    background-image: url('../public/images/stars-background.jpg');
+}
+
+.home-button {
+    background: linear-gradient(
+        180deg,
+        #8dfffc 34.9%,
+        rgba(0, 255, 248, 0.209202) 86.46%,
+        rgba(146, 255, 252, 0.408177) 99.97%,
+        rgba(180, 255, 253, 0.0206269) 99.98%,
+        rgba(102, 251, 247, 0.0104167) 99.99%,
+        rgba(0, 155, 151, 0) 100%
+    );
+    border-radius: 30px;
+}

@@ -4,6 +4,14 @@ const NEXT_API = axios.create({
     baseURL: 'http://localhost:3000/api',
 })
 
-export async function getAllPosts() {
-    return NEXT_API.get('/posts')
+export async function getAllProject() {
+    return NEXT_API.get('/project')
+}
+
+export async function getAllTechnos() {
+    return NEXT_API.get('/technos')
+}
+
+export async function getAllTechnosProject() {
+    return NEXT_API.get('/technos-project')
 }
