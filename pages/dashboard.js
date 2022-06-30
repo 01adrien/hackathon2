@@ -28,15 +28,15 @@ export default function dashboard() {
                     </p>
                 </div>
                 <div className="flex py-24 ">
-                    <div className="flex flex-col absolute left-0 mx-8 w-[10%]">
-                        <h2 className="py-6 left-0 text-white uppercase font-bold text-center">
+                    <div className="flex flex-col absolute left-0 mx-8 w-[12%]">
+                        <p className="py-6 text-[26px] left-0 text-white uppercase font-bold text-center">
                             Search your Rocket
-                        </h2>
+                        </p>
                         <form className="my-6">
                             <label htmlFor="language-select">
                                 <select
                                     id="language-select"
-                                    className="w-[100%] text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
+                                    className="w-[100%] shadow-md shadow-gray-300 text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
                                     onChange={(e) =>
                                         handleChange(e.target.value)
                                     }
@@ -79,13 +79,13 @@ export default function dashboard() {
                                 >
                                     <option value="Language">Sector</option>
                                     <option value="Java/Angular">
-                                        Banque/Assurance
+                                        Bank/Insurance
                                     </option>
-                                    <option value="React/Node">
-                                        React/Node
-                                    </option>
+                                    <option value="React/Node"></option>
                                     <option value="PHP/Symfony">
-                                        PHP/Symfony
+                                        Aéronautique
+                                        transport, aérospatiale 11 h 43 BTP 11 h
+                                        43 Télécom
                                     </option>
                                 </select>
                             </label>

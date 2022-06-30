@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { useState } from 'react'
 
 export default function Layout({ children, pageTitle }) {
-
     return (
         <>
             <Head>
@@ -22,10 +21,10 @@ export default function Layout({ children, pageTitle }) {
                         alt=""
                         width={60}
                         height={40}
-                        className="cursor-pointer hover:animate-spin "
+                        className="cursor-pointer hover:animate-spin p-2"
                     ></Image>
                 </Link>
-                <p className="text-lg text-white font-bold">Home</p>
+                <p className="text-lg text-white font-bold p-2">Home</p>
             </div>
             {children}
         </>
