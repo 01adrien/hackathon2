@@ -1,40 +1,31 @@
-import Layout from '../components/layout'
+import React from 'react'
 import logoImg from '../public/images/logoAbside.png'
 import Image from 'next/image'
-import Typewriter from 'typewriter-effect'
+import Head from 'next/Head'
 
 export default function Home() {
     return (
-        <Layout pageTitle={'Home'}>
+        <>
+            <Head>
+                <title>My home page</title>
+            </Head>
             <div className="home-bg h-[100vh] flex flex-col items-center">
                 <div className="text-white mt-36 flex flex-col items-center w-[80vw] font-[800] text-[76px]">
-                    <p>UP'SIDE</p>
+                    <p>UP&apos;SIDE</p>
+
                     <div className="flex items-center justify-center text-[46px] font-[700]">
-                        <p className="py-3 text-gray-100 m-5 text-4xl">
-                            <Typewriter
-                                options={{
-                                    strings: [
-                                        'Welcome to you, Apsidian !',
-                                        'One Project ⇒ One Rocket',
-                                        'Search and Create a project',
-                                    ],
-                                    autoStart: true,
-                                    loop: true,
-                                }}
-                            />
+                        <p className="py-3 text-gray-200 m-5 text-4xl">
+                            One Project = One Rocket
                         </p>
                     </div>
-                    <img
-                        className="w-12 h-11"
-                        src="https://cdn-icons-png.flaticon.com/512/1356/1356479.png"
-                        alt=""
-                    />
+                    <p className="text-[70px]">🚀</p>
                 </div>
-                <div className="text-white flex flex-col items-center mt-12">
-                    <button className="bg-blue-500 hover:bg-blue-700 hover:scale-110 font-bold py-2 px-4 h-20 w-[22vw] text-black text-[1.7rem] home-button rounded-lg">
-                        Launch a project
+                <div className="text-white flex flex-col items-center mt-8">
+                    <button className="bg-blue-500 hover:bg-blue-700 hover:scale-110 font-bold py-2 px-4 h-20 w-[32vw] text-black text-[1.3rem] home-button rounded-lg uppercase">
+                        Launch a rocket
                     </button>
-                    <p className="font-[500] mt flex items-center mt-8">
+
+                    <p className="font-[500] flex items-center mt-8">
                         or explore
                         <span className="ml-5 mr-5 hover:scale-110 cursor-pointer">
                             <Image
@@ -49,6 +40,6 @@ export default function Home() {
                     </p>
                 </div>
             </div>
-        </Layout>
+        </>
     )
 }
