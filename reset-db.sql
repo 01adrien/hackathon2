@@ -13,7 +13,8 @@ DROP TABLE IF EXISTS technos;
         `name` VARCHAR(255) NOT NULL,
         `type` VARCHAR(200) NOT NULL,
         `sector` VARCHAR(200) NOT NULL,
-        `city` VARCHAR(50) NOT NULL
+        `city` VARCHAR(50) NOT NULL,
+        `description` TEXT NOT NULL
       );
 
 
@@ -42,13 +43,13 @@ VALUES
 ('Amazon');
 
 
-INSERT INTO project(name, type, sector, city) 
+INSERT INTO project(name, type, sector, city, description) 
 VALUES
-('Rocket League', 'Mobile App', 'Bank', 'Lyon'),
-('Rasta Rocket', 'Website', 'Bank', 'Amsterdam'),
-('Team Rocket', 'Data dashboard', 'Industry', 'Strasbourg'),
-('Rocket of tennis', 'Responsive app', 'Sport', 'Paris'),
-('Rocket 🥬', 'Software', 'Agro', 'Nantes');
+('Rocket League', 'Mobile App', 'Bank', 'Lyon', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam mi, lobortis nec luctus sit amet, semper vitae mi. Vestibulum non dignissim metus. Sed vel tortor dui. Praesent sit amet velit neque. Donec ullamcorper, diam quis aliquet dapibus, risus velit lacinia ipsum, vel ultricies augue felis et augue. Cras eleifend felis in ligula consectetur'),
+('Rasta Rocket', 'Website', 'Bank', 'Amsterdam', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam mi, lobortis nec luctus sit amet, semper vitae mi. Vestibulum non dignissim metus. Sed vel tortor dui. Praesent sit amet velit neque. Donec ullamcorper, diam quis aliquet dapibus, risus velit lacinia ipsum, vel ultricies augue felis et augue. Cras eleifend felis in ligula consectetur'),
+('Team Rocket', 'Data dashboard', 'Industry', 'Strasbourg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam mi, lobortis nec luctus sit amet, semper vitae mi. Vestibulum non dignissim metus. Sed vel tortor dui. Praesent sit amet velit neque. Donec ullamcorper, diam quis aliquet dapibus, risus velit lacinia ipsum, vel ultricies augue felis et augue. Cras eleifend felis in ligula consectetur'),
+('Rocket of tennis', 'Responsive app', 'Sport', 'Paris', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam mi, lobortis nec luctus sit amet, semper vitae mi. Vestibulum non dignissim metus. Sed vel tortor dui. Praesent sit amet velit neque. Donec ullamcorper, diam quis aliquet dapibus, risus velit lacinia ipsum, vel ultricies augue felis et augue. Cras eleifend felis in ligula consectetur'),
+('Rocket 🥬', 'Software', 'Agro', 'Nantes', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam quam mi, lobortis nec luctus sit amet, semper vitae mi. Vestibulum non dignissim metus. Sed vel tortor dui. Praesent sit amet velit neque. Donec ullamcorper, diam quis aliquet dapibus, risus velit lacinia ipsum, vel ultricies augue felis et augue. Cras eleifend felis in ligula consectetur');
 
 
 INSERT INTO technosProject(project_id, technos_id) 
