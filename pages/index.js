@@ -1,24 +1,28 @@
-import Layout from '../components/layout'
+import React from 'react'
 import logoImg from '../public/images/logoAbside.png'
 import Image from 'next/image'
+import Head from 'next/Head'
 import { useRouter } from 'next/router'
+import useSound from 'use-sound'
 
 export default function Home() {
     const router = useRouter()
 
     return (
-        <Layout pageTitle={'Home'}>
+        <>
+            <Head>
+                <title>My home page</title>
+            </Head>
             <div className="home-bg h-[100vh] flex flex-col items-center">
                 <div className="text-white mt-36 flex flex-col items-center w-[80vw] font-[800] text-[76px]">
-                    <p>UP'SIDE</p>
-                    <p className="flex items-center justify-center text-[46px] font-[700]">
-                        One project <span className="m-5 text-2xl">⇒</span>
-                        One
-                        <img
-                            className="w-14 h-14 ml-5 animate-bounce"
-                            src="https://cdn-icons-png.flaticon.com/512/1356/1356479.png"
-                        />
-                    </p>
+                    <p>UP&apos;SIDE</p>
+
+                    <div className="flex items-center justify-center text-[46px] font-[700]">
+                        <p className="py-3 text-gray-200 m-5 text-4xl">
+                            One Project = One Rocket
+                        </p>
+                    </div>
+                    <p className="text-[70px] animate-bounce">🚀</p>
                 </div>
                 <div className="text-white flex flex-col items-center mt-12">
                     <button
@@ -32,18 +36,23 @@ export default function Home() {
                         <span
                             className="ml-5 mr-5 hover:scale-110 cursor-pointer"
                             onClick={() => router.push('/dashboard')}
+                            onClicl={(event) => {
+                                router.push('/dashboard')
+                                play
+                            }}
                         >
                             <Image
                                 src={logoImg}
                                 width={80}
                                 height={40}
                                 style={{ borderRadius: '10px' }}
+                                alt=""
                             />
                         </span>
                         galaxy
                     </p>
                 </div>
             </div>
-        </Layout>
+        </>
     )
 }

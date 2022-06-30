@@ -13,7 +13,9 @@ export default function DescriptionForm() {
         <div>
             <form>
                 <label className={styles.descriptionLabel}>
-                    <div className="text-xl font-bold 		mb-5">Description : </div>
+                    <div className="text-[24] font-bold mb-5">
+                        Description :{' '}
+                    </div>
                     <textarea
                         onChange={handleChange}
                         className="min-w-[40vw] h-[40vh] rounded-lg p-5 shadow-inner"
