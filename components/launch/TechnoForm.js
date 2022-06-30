@@ -1,7 +1,4 @@
 import React, { useContext } from 'react'
-import styles from '../../styles/launch.module.css'
-import Image from 'next/image'
-import { Draggable } from 'react-beautiful-dnd'
 import Techno from './Techno'
 import createRocketContext from '../../context/CreateRocketContext'
 

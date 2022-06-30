@@ -1,6 +1,5 @@
 import React, { useContext } from 'react'
 import createRocketContext from '../../context/CreateRocketContext'
-import styles from '../../styles/launch.module.css'
 import Image from 'next/image'
 
 export default function ProjectTypeForm({ setColor }) {

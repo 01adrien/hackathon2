@@ -1,8 +1,5 @@
-import React, { useContext, useEffect } from 'react'
-import createRocketContext, {
-    CreateRocketContextProvider,
-} from '../../context/CreateRocketContext'
-import Layout from '../layout'
+import React, { useEffect } from 'react'
+import { CreateRocketContextProvider } from '../../context/CreateRocketContext'
 import DescriptionForm from './DescriptionForm'
 import MainDataForm from './MainDataForm'
 import ProgressStepper from './ProgressStepper'
@@ -11,7 +8,6 @@ import SectorForm from './SectorForm'
 import Summary from './Summary'
 import TechnoForm from './TechnoForm'
 import styles from '../../styles/launch.module.css'
-import Image from 'next/image'
 
 export default function CreateForm({
     activeStep,
