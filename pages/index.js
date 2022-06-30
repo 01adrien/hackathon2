@@ -14,6 +14,7 @@ export default function Home() {
                         <img
                             className="w-14 h-14 ml-5"
                             src="https://cdn-icons-png.flaticon.com/512/1356/1356479.png"
+                            alt=""
                         />
                     </p>
                 </div>
@@ -29,6 +30,7 @@ export default function Home() {
                                 width={80}
                                 height={40}
                                 style={{ borderRadius: '10px' }}
+                                alt=""
                             />
                         </span>
                         galaxy
