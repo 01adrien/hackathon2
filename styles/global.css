@@ -28,6 +28,10 @@ body {
     background-image: url('../public/images/stars-background.jpg');
 }
 
+.project-bg {
+    background-image: url('../public/images/stars-background2.jpg');
+}
+
 .home-button {
     background: linear-gradient(
         180deg,

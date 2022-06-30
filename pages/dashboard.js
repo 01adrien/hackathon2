@@ -1,10 +1,15 @@
 /* eslint-disable */
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import style from '../styles/dashboard.module.css'
 import Layout from '../components/layout'
 import Image from 'next/image'
 import redPlanetImg from '../public/images/redPlanet.png'
-// import Link from 'next/link'
+import yellowRocketImg from '../public/images/rocket_y.png'
+import blueRocketImg from '../public/images/rocket_blue.png'
+import redRocketImg from '../public/images/rocket_stop.png'
+import explosion from '../public/images/explosion.png'
+import ufo from '../public/images/ufo.png'
+const jsmediatags = require('jsmediatags')
 
 export default function dashboard() {
     const [filterLang, setFilterLang] = useState('')
@@ -12,6 +17,66 @@ export default function dashboard() {
     const handleChange = (value) => {
         setFilterLang(!filterLang)
     }
+
+    function shoot() {
+        jsmediatags.read('../public/images/laserGun.mp3', {
+            onSuccess: function (tag) {
+                console.log(tag)
+            },
+            onError: function (error) {
+                console.log(':(', error.type, error.info)
+            },
+        })
+    }
+
+    const rocketNumber = 7
+    const defaultPosition = [2, 7, 1, 4, 5, 8, 2]
+    const rocketPicture = [blueRocketImg, yellowRocketImg, redRocketImg]
+    const [cursorValue, setCursorValue] = useState(0)
+    const [rocketSelected, setRocketSelected] = useState({})
+    const [rocketDestroy, setRocketDestroy] = useState(false)
+    const initialState = new Array(rocketNumber).fill().map((_, i) => ({
+        progress: defaultPosition[i] * 100,
+        ...rocketPicture[Math.floor(Math.random() * 3)],
+        id: i,
+    }))
+    const [rockets, setRockets] = useState(initialState)
+
+    function changeRocket(rocket) {
+        setRocketSelected(rocket)
+        setCursorValue(rocket.progress)
+    }
+
+    function moveRocket() {
+        rocketSelected.progress = cursorValue
+    }
+
+    function projectComplete() {
+        if (rocketSelected.progress > 820) {
+            rocketSelected.src = explosion.src
+            setTimeout(
+                () =>
+                    setRockets(
+                        rockets.filter((r) => r.id !== rocketSelected.id)
+                    ),
+                200
+            )
+        }
+    }
+
+    function destroyRocket() {
+        rocketSelected.src = explosion.src
+        setTimeout(() => setRocketDestroy(!rocketDestroy), 200)
+        setTimeout(
+            () => setRockets(rockets.filter((r) => r.id !== rocketSelected.id)),
+            700
+        )
+    }
+
+    useEffect(() => {
+        moveRocket()
+        projectComplete()
+    }, [cursorValue, rocketSelected, rockets, rocketDestroy])
 
     return (
         <Layout pageTitle={'dashboard'}>
@@ -27,6 +92,15 @@ export default function dashboard() {
                         validation
                     </p>
                 </div>
+<<<<<<< HEAD
+                <div className="flex py-24 justify-around h-[100%]">
+                    <div className="flex flex-col absolute left-0 mx-8 w-[12%] h-[100%]">
+                        projects{' '}
+                        <p className="py-6 text-[26px] left-0 text-white uppercase font-bold text-center">
+                            Search your Rocket
+                        </p>
+                        <form className="my-6">
+=======
 
                 <div className="flex flex-col absolute py-16 left-0 mr-12 w-[18%] h-full p-18 bg-black shadow-lg shadow-gray-400">
                     <p className="py-6 text-[26px] left-0 text-white uppercase font-bold text-center ">
@@ -49,6 +123,7 @@ export default function dashboard() {
                                     />
                                 </label>
                             </div>
+>>>>>>> dev
                             <label htmlFor="language-select">
                                 <select
                                     id="language-select"
@@ -99,6 +174,9 @@ export default function dashboard() {
                                     </option>
                                     <option value="React/Node"></option>
                                     <option value="PHP/Symfony">
+<<<<<<< HEAD
+                                        Aéronautique transport, aérospatiale
+=======
                                         Aeronautics
                                     </option>
                                     <option value="PHP/Symfony">
@@ -113,6 +191,7 @@ export default function dashboard() {
                                     <option value="PHP/Symfony">
                                         {' '}
                                         Telecoms
+>>>>>>> dev
                                     </option>
                                 </select>
                             </label>
@@ -143,6 +222,62 @@ export default function dashboard() {
                                     <option value="Brest">Brest</option>
                                 </select>
                             </label>
+<<<<<<< HEAD
+                        </form>
+                    </div>
+                    <div className="h-auto w-[60%]">
+                        <div className="project-bg h-[60vw]">
+                            <input
+                                className="w-[60vw]"
+                                onChange={(e) => setCursorValue(e.target.value)}
+                                type="range"
+                                min="0"
+                                max="1000"
+                                value={cursorValue}
+                                step="10"
+                            ></input>
+                            <button
+                                onClick={() => destroyRocket(rocketSelected)}
+                                className="text-red-80 rounded-md text-2xl py-2 px-4 fixed ml-4 mb-3"
+                            >
+                                <Image src={ufo} width={100} height={100} />
+                            </button>
+                            {rockets.length
+                                ? rockets.map((rocket, i) => (
+                                      <div className={`w-[100vw] h-[10vh]`}>
+                                          <div
+                                              style={{
+                                                  marginLeft: `${rocket.progress}px`,
+                                              }}
+                                              onClick={() =>
+                                                  changeRocket(rocket)
+                                              }
+                                          >
+                                              <Image
+                                                  className={` rotate-90 h-[100%] `}
+                                                  src={rocket.src}
+                                                  width={200}
+                                                  height={200}
+                                              />
+                                          </div>
+                                      </div>
+                                  ))
+                                : null}
+                        </div>
+                    </div>
+                    <div
+                        div
+                        className="flex fixed right-0 mr-[-56] justify-center items-center text-white my-36 "
+                    >
+                        <Image
+                            src={redPlanetImg}
+                            alt="mars-picture"
+                            className="rounded-l-full h-[80vh]"
+                            width={250}
+                            height={600}
+                        ></Image>
+                    </div>
+=======
                         </div>
                     </form>
                 </div>
@@ -154,6 +289,7 @@ export default function dashboard() {
                         width={180}
                         height={350}
                     ></Image>
+>>>>>>> dev
                 </div>
             </div>
         </Layout>
