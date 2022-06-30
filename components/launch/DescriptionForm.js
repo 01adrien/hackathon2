@@ -17,7 +17,7 @@ export default function DescriptionForm() {
                     <textarea
                         onChange={handleChange}
                         className="min-w-[40vw] h-[40vh] rounded-lg p-5 shadow-inner"
-                        placeholder="Décrivez ici les instructions de la mission"
+                        placeholder="Describe the mission instructions here"
                     />
                 </label>
             </form>

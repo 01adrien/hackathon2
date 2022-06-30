@@ -2,8 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import Image from 'next/image'
 import styles from '../../styles/launch.module.css'
 
-export default function Rocket({ activeStep, isLaunching }) {
-    const [color, setColor] = useState('red')
+export default function Rocket({ activeStep, isLaunching, color }) {
     const [rocketImg, setRocketImg] = useState(
         '/images/rocket/red/rocket_0.png'
     )
@@ -40,27 +39,45 @@ export default function Rocket({ activeStep, isLaunching }) {
                             height={500}
                         />
                     </div>
-                </div>
-            ) : (
-                <div className={styles.rocketConstruction}>
-                    <div className={styles.rocketLaunch}>
-                        {' '}
+                    <div className={styles.worker}>
                         <Image
-                            key={`/images/rocket/${color}/rocket_5.png`}
-                            src={`/images/rocket/${color}/rocket_5.png`}
-                            alt="Picture of rocket"
-                            width={500}
-                            height={500}
+                            src="/images/worker.png"
+                            alt="Picture of bob the worker"
+                            width={200}
+                            height={200}
                         />
                     </div>
-                    <div className={styles.smoke}>
-                        {' '}
+                </div>
+            ) : (
+                <div>
+                    <div className={styles.rocketConstruction}>
+                        <div className={styles.rocketLaunch}>
+                            {' '}
+                            <Image
+                                key={`/images/rocket/${color}/rocket_5.png`}
+                                src={`/images/rocket/${color}/rocket_5.png`}
+                                alt="Picture of rocket"
+                                width={500}
+                                height={500}
+                            />
+                        </div>
+                        <div className={styles.smoke}>
+                            {' '}
+                            <Image
+                                key={'cloud'}
+                                src="/images/cloud2.png"
+                                alt="Picture of rocket"
+                                width={500}
+                                height={250}
+                            />
+                        </div>
+                    </div>
+                    <div className={styles.worker}>
                         <Image
-                            key={'cloud'}
-                            src="/images/cloud2.png"
-                            alt="Picture of rocket"
-                            width={500}
-                            height={250}
+                            src="/images/worker_launch.png"
+                            alt="Picture of bob the worker"
+                            width={200}
+                            height={200}
                         />
                     </div>
                 </div>

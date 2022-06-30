@@ -8,6 +8,7 @@ import styles from '../../styles/launch.module.css'
 export default function Launch() {
     const [activeStep, setActiveStep] = useState(0)
     const [isLaunching, setIsLaunching] = useState(false)
+    const [color, setColor] = useState('red')
 
     return (
         <CreateRocketContextProvider>
@@ -17,11 +18,13 @@ export default function Launch() {
                         activeStep={activeStep}
                         setActiveStep={setActiveStep}
                         setIsLaunching={setIsLaunching}
+                        setColor={setColor}
                     />
                     <Rocket
                         activeStep={activeStep}
                         setActiveStep={setActiveStep}
                         isLaunching={isLaunching}
+                        color={color}
                     />
                 </div>
             </Layout>

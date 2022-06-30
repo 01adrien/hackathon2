@@ -17,6 +17,7 @@ export default function CreateForm({
     activeStep,
     setActiveStep,
     setIsLaunching,
+    setColor,
 }) {
     useEffect(() => {}, [activeStep])
 
@@ -28,7 +29,9 @@ export default function CreateForm({
                 <div className="flex flex-col h-[100%] justify-center items-center">
                     {activeStep === 0 && <MainDataForm />}
                     {activeStep === 1 && <SectorForm />}
-                    {activeStep === 2 && <ProjectTypeForm />}
+                    {activeStep === 2 && (
+                        <ProjectTypeForm setColor={setColor} />
+                    )}
                     {activeStep === 3 && <TechnoForm />}
                     {activeStep === 4 && <DescriptionForm />}
                     {activeStep === 5 && <Summary />}
