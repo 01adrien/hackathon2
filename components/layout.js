@@ -2,7 +2,6 @@ import Head from 'next/head'
 import Image from 'next/image'
 import rocketlogoImg from '../public/images/rocket_stopl.png'
 import Link from 'next/link'
-import { useState } from 'react'
 
 export default function Layout({ children, pageTitle }) {
     return (
