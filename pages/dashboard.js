@@ -92,6 +92,7 @@ export default function dashboard() {
                         validation
                     </p>
                 </div>
+<<<<<<< HEAD
                 <div className="flex py-24 justify-around h-[100%]">
                     <div className="flex flex-col absolute left-0 mx-8 w-[12%] h-[100%]">
                         projects{' '}
@@ -99,6 +100,30 @@ export default function dashboard() {
                             Search your Rocket
                         </p>
                         <form className="my-6">
+=======
+
+                <div className="flex flex-col absolute py-16 left-0 mr-12 w-[18%] h-full p-18 bg-black shadow-lg shadow-gray-400">
+                    <p className="py-6 text-[26px] left-0 text-white uppercase font-bold text-center ">
+                        Search your Rocket
+                    </p>
+                    <form className="my-6">
+                        <div className="flex flex-col text-left w-[90%]rounded-md m-auto border-gray-500 text-[#7F7F7F]  p-2">
+                            <div className=" flex flex-col w-[100%] shadow-md shadow-gray-300 rounded-md m-auto  text-[#7F7F7F] bg-white my-6">
+                                <label
+                                    htmlFor="find a project"
+                                    className="text-xs sm:text-base py-1"
+                                >
+                                    <textarea
+                                        type="textarea"
+                                        className="w-[100%] text-black font-bold hover:bg-yellow-200 "
+                                        rows="1"
+                                        name="message"
+                                        onChange={(e) => e.target.value}
+                                        placeholder="search a rocket"
+                                    />
+                                </label>
+                            </div>
+>>>>>>> dev
                             <label htmlFor="language-select">
                                 <select
                                     id="language-select"
@@ -119,10 +144,10 @@ export default function dashboard() {
                                     </option>
                                 </select>
                             </label>
-                            <label htmlFor="language-select">
+                            <label htmlFor="language-Type">
                                 <select
-                                    id="language-select"
-                                    className="w-[100%] text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
+                                    id="type-select"
+                                    className="w-[100%] shadow-md shadow-gray-300 text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
                                     onChange={(e) =>
                                         handleChange(e.target.value)
                                     }
@@ -137,8 +162,8 @@ export default function dashboard() {
                             </label>
                             <label htmlFor="language-select">
                                 <select
-                                    id="language-select"
-                                    className="w-[100%] text-black font-bold cursor-pointer hover:bg-yellow-200  py-2 my-6 rounded-md "
+                                    id="sector-select"
+                                    className="w-[100%] text-black  shadow-md shadow-gray-300 font-bold cursor-pointer hover:bg-yellow-200  py-2 my-6 rounded-md "
                                     onChange={(e) =>
                                         handleChange(e.target.value)
                                     }
@@ -149,14 +174,31 @@ export default function dashboard() {
                                     </option>
                                     <option value="React/Node"></option>
                                     <option value="PHP/Symfony">
+<<<<<<< HEAD
                                         Aéronautique transport, aérospatiale
+=======
+                                        Aeronautics
+                                    </option>
+                                    <option value="PHP/Symfony">
+                                        Aerospace
+                                    </option>
+                                    <option value="PHP/Symfony">
+                                        Transportation
+                                    </option>
+                                    <option value="PHP/Symfony">
+                                        Construction industry
+                                    </option>
+                                    <option value="PHP/Symfony">
+                                        {' '}
+                                        Telecoms
+>>>>>>> dev
                                     </option>
                                 </select>
                             </label>
                             <label htmlFor="language-select">
                                 <select
                                     id="language-select"
-                                    className="w-[100%] text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
+                                    className="w-[100%] text-black  shadow-md shadow-gray-300 font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
                                     onChange={(e) =>
                                         handleChange(e.target.value)
                                     }
@@ -180,6 +222,7 @@ export default function dashboard() {
                                     <option value="Brest">Brest</option>
                                 </select>
                             </label>
+<<<<<<< HEAD
                         </form>
                     </div>
                     <div className="h-auto w-[60%]">
@@ -234,6 +277,19 @@ export default function dashboard() {
                             height={600}
                         ></Image>
                     </div>
+=======
+                        </div>
+                    </form>
+                </div>
+                <div className="flex fixed right-0 mr-[-56] justify-center items-center text-white my-36 ">
+                    <Image
+                        src={redPlanetImg}
+                        alt="mars-picture"
+                        className="rounded-l-full"
+                        width={180}
+                        height={350}
+                    ></Image>
+>>>>>>> dev
                 </div>
             </div>
         </Layout>
