@@ -1,0 +1,192 @@
+/* Main components */
+
+.projectDetailsBody {
+    background-image: url('../public/images/stars-background2.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    min-height: 100vh;
+    display: flex;
+    font-family: 'Raleway', sans-serif;
+}
+
+.leftSide {
+    width: calc(100% / 3);
+    padding-top: 20px;
+}
+
+.middle {
+    padding-top: 50px;
+    width: calc(100% / 3);
+}
+
+.rigthSide {
+    width: calc(100% / 3);
+    padding-top: 50px;
+}
+
+.categoryBox {
+    background-color: #d9d9d9;
+    width: 450px;
+    height: 700px;
+    border-radius: 20px;
+    margin: auto;
+}
+
+.upBorder {
+    width: 450px;
+    height: 50px;
+    background-color: #bfbfbf;
+    border-radius: 20px 20px 0 0;
+    box-shadow: 0 3px #9f9c9c;
+    margin-bottom: 25px;
+}
+
+/* Ttiles */
+
+.mainTitle {
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.cityTitle {
+    text-align: center;
+    font-size: 30px;
+}
+
+/* Progress bar */
+
+.progress {
+    margin-top: 100px;
+}
+
+.progressTitle {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: -25px;
+}
+
+.progressTitle2 {
+    text-align: center;
+    font-size: 30px;
+    margin-top: -40px;
+}
+
+.progressBar {
+    width: 80%;
+    margin: 10%;
+}
+
+/* Project detail boxes */
+
+.projectDetails {
+    display: flex;
+    justify-content: space-around;
+    margin: 5%;
+    margin-top: 80px;
+    text-align: center;
+}
+
+.projectBox1 {
+    width: 100px;
+    height: 100px;
+    background-color: #bfbfbf;
+    box-shadow: 1px 3px #7f7d7d;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.projectBox2 {
+    width: 100px;
+    height: 100px;
+    background-color: #bfbfbf;
+    box-shadow: 1px 3px #7f7d7d;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.projectBox3 {
+    width: 100px;
+    height: 100px;
+    background-color: #bfbfbf;
+    box-shadow: 1px 3px #7f7d7d;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.boxTitle {
+    font-size: 14px;
+}
+
+.boxNumber {
+    padding-top: 5px;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.workDiv {
+    padding-top: 50px;
+}
+
+/* LEFT SIDE */
+
+.marsDiv {
+    margin: auto;
+    padding-left: 16%;
+}
+
+.projectDescription {
+    color: white;
+    text-align: center;
+}
+
+.projectDescriptionTitle {
+    margin-bottom: 20px;
+    font-size: 40px;
+    padding: 0 10% 0 10%;
+}
+
+.projectDescriptionText {
+    margin: 50px 50px;
+}
+
+/* RIGHT SIDE */
+
+.crewToolsDiv {
+    text-align: center;
+    padding-top: 100px;
+}
+
+.crewToolsTitle {
+    color: white;
+    font-size: 40px;
+}
+
+.crewToolsImg {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 40px;
+}
+
+.rocket {
+    transform: rotate(20deg);
+}
+
+.rocket:hover {
+    transform: rotate(60deg);
+    transform: scale(110%);
+}
+
+.flecheDiv {
+    padding-left: 50px;
+}
+
+.flecheRouge:hover {
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px rgb(127, 52, 52));
+    transform: scale(110%);
+    transform: translate(-5px, 0px);
+}

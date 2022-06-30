@@ -2,8 +2,11 @@ import React from 'react'
 import logoImg from '../public/images/logoAbside.png'
 import Image from 'next/image'
 import Head from 'next/Head'
+import { useRouter } from 'next/router'
 
 export default function Home() {
+    const router = useRouter()
+
     return (
         <>
             <Head>
@@ -27,7 +30,10 @@ export default function Home() {
 
                     <p className="font-[500] flex items-center mt-8">
                         or explore
-                        <span className="ml-5 mr-5 hover:scale-110 cursor-pointer">
+                        <span
+                            className="ml-5 mr-5 hover:scale-110 cursor-pointer"
+                            onClick={() => router.push('/dashboard')}
+                        >
                             <Image
                                 src={logoImg}
                                 width={80}
