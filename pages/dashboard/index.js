@@ -3,15 +3,16 @@ import React, { useState, useEffect } from 'react'
 import style from '../../styles/dashboard.module.css'
 import Layout from '../../components/layout'
 import Image from 'next/image'
-import yellowRocketImg from '../../public/images/rocket_y.png'
-import blueRocketImg from '../../public/images/rocket_blue.png'
-import redRocketImg from '../../public/images/rocket_stop.png'
+import yellowRocketImg from '../../public/images/rocket/yellow/rocket_5.png'
+import blueRocketImg from '../../public/images/rocket/blue/rocket_5.png'
+import redRocketImg from '../../public/images/rocket/red/rocket_5.png'
 import explosion from '../../public/images/explosion.png'
 import ufo from '../../public/images/ufo.png'
+import Popup from '../../components/popup'
 
 export default function dashboard() {
     const [filterLang, setFilterLang] = useState('')
-
+    const [openPopup, setOpenPopup] = useState(false)
     const handleChange = (value) => {
         setFilterLang(!filterLang)
     }
@@ -41,6 +42,7 @@ export default function dashboard() {
     const [rockets, setRockets] = useState(initialState)
 
     function changeRocket(rocket) {
+        setOpenPopup(true)
         setRocketSelected(rocket)
         setCursorValue(rocket.progress)
     }
@@ -50,7 +52,7 @@ export default function dashboard() {
     }
 
     function projectComplete() {
-        if (rocketSelected.progress > 1250) {
+        if (rocketSelected.progress > 1220) {
             rocketSelected.src = explosion.src
             setTimeout(
                 () =>
@@ -236,6 +238,12 @@ export default function dashboard() {
                     </div>
                 </div>
             </div>
+            {openPopup ? (
+                <Popup
+                    content={`projet numero ${rocketSelected.id}`}
+                    handleClose={() => setOpenPopup(false)}
+                />
+            ) : null}
         </Layout>
     )
 }
