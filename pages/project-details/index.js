@@ -6,6 +6,7 @@ import nodeImg from '../../public/images/node.png'
 import javaImg from '../../public/images/java.png'
 import phpImg from '../../public/images/php.png'
 import rocketImg from '../../public/images/rocket_stop.png'
+import flecheImg from '../../public/images/flecherouge.png'
 import style from '../../styles/projectDetails.module.css'
 import Layout from '../../components/Layout'
 
@@ -35,6 +36,15 @@ export default function ProjectDetails() {
                             lacinia ipsum, vel ultricies augue felis et augue.
                             Cras eleifend felis in ligula consectetur
                         </p>
+                    </div>
+                    <div className={style.flecheDiv}>
+                        <Image
+                            src={flecheImg}
+                            alt="fleche-img"
+                            width={100}
+                            height={80}
+                            className={style.flecheRouge}
+                        />
                     </div>
                 </div>
                 <div className={style.middle}>

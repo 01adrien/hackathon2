@@ -171,3 +171,14 @@
 .rocketDiv {
     transform: rotate(20deg);
 }
+
+.flecheDiv {
+    padding-left: 50px;
+}
+
+.flecheRouge:hover {
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 2px rgb(127, 52, 52));
+    transform: scale(110%);
+    transform: translate(-5px, 0px);
+}
