@@ -25,6 +25,10 @@ body {
     cursor: url('http://www.rw-designer.com/cursor-view/106419-48.png'), auto;
 }
 
+.MuiMobileStepper-dotActive {
+    background-color: black;
+  }
+  
 .home-bg {
     background-image: url('../public/images/stars-background.jpg');
 }
