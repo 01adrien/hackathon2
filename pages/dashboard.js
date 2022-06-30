@@ -1,6 +1,5 @@
 /* eslint-disable */
 import React, { useState, useEffect } from 'react'
-import { Howl, Howler } from 'howler'
 import style from '../styles/dashboard.module.css'
 import Layout from '../components/layout'
 import Image from 'next/image'
@@ -10,8 +9,7 @@ import blueRocketImg from '../public/images/rocket_blue.png'
 import redRocketImg from '../public/images/rocket_stop.png'
 import explosion from '../public/images/explosion.png'
 import ufo from '../public/images/ufo.png'
-import gun from '../public/images/laserGun.mp3'
-var jsmediatags = require('jsmediatags')
+const jsmediatags = require('jsmediatags')
 
 export default function dashboard() {
     const [filterLang, setFilterLang] = useState('')
@@ -20,24 +18,15 @@ export default function dashboard() {
         setFilterLang(!filterLang)
     }
 
-    jsmediatags.read('./music-file.mp3', {
-        onSuccess: function (tag) {
-            console.log(tag)
-        },
-        onError: function (error) {
-            console.log(':(', error.type, error.info)
-        },
-    })
-
-    const sound = new Howl({
-        src: ['../public/imageslasrGun.mp3'],
-    })
-
-    const start = () => {
-        if (typeof window === 'undefined') {
-            const sonKlaxon = new Audio(gun)
-            sonKlaxon.play()
-        }
+    function shoot() {
+        jsmediatags.read('../public/images/laserGun.mp3', {
+            onSuccess: function (tag) {
+                console.log(tag)
+            },
+            onError: function (error) {
+                console.log(':(', error.type, error.info)
+            },
+        })
     }
 
     const rocketNumber = 7
@@ -60,11 +49,10 @@ export default function dashboard() {
 
     function moveRocket() {
         rocketSelected.progress = cursorValue
-        console.log(rocketSelected.progress)
     }
 
     function projectComplete() {
-        if (rocketSelected.progress > 850) {
+        if (rocketSelected.progress > 820) {
             rocketSelected.src = explosion.src
             setTimeout(
                 () =>
@@ -209,12 +197,7 @@ export default function dashboard() {
                                 onClick={() => destroyRocket(rocketSelected)}
                                 className="text-red-80 rounded-md text-2xl py-2 px-4 fixed ml-4 mb-3"
                             >
-                                <Image
-                                    onClick={() => sound.play()}
-                                    src={ufo}
-                                    width={100}
-                                    height={100}
-                                />
+                                <Image src={ufo} width={100} height={100} />
                             </button>
                             {rockets.length
                                 ? rockets.map((rocket, i) => (
