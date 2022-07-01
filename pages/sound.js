@@ -14,11 +14,7 @@ export default function Dash() {
 
     return (
         <div>
-            <input
-                type="button"
-                value="Click to Open Popup"
-                onClick={togglePopup}
-            />
+            <input type="button" value="Click to Open Popup" onClick={audio2} />
             {isOpen && (
                 <Popup
                     content={

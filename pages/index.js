@@ -1,18 +1,13 @@
 import React from 'react'
 import logoImg from '../public/images/logoAbside.png'
 import Image from 'next/image'
-import Head from 'next/Head'
 import { useRouter } from 'next/router'
-import useSound from 'use-sound'
 
 export default function Home() {
     const router = useRouter()
 
     return (
         <>
-            <Head>
-                <title>My home page</title>
-            </Head>
             <div className="home-bg h-[100vh] flex flex-col items-center">
                 <div className="text-white mt-36 flex flex-col items-center w-[80vw] font-[800] text-[76px]">
                     <p>UP&apos;SIDE</p>
