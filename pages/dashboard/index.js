@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react'
 import style from '../../styles/dashboard.module.css'
 import Layout from '../../components/layout'
+import LaserRay from '../../components/laserRay'
 import Image from 'next/image'
 import yellowRocketImg from '../../public/images/rocket/yellow/rocket_5.png'
 import blueRocketImg from '../../public/images/rocket/blue/rocket_5.png'
@@ -33,8 +34,10 @@ export default function dashboard() {
         id: i,
     }))
     const [rockets, setRockets] = useState(initialState)
-
+    const laserX = 0
+    const laserY = 0
     function changeRocket(rocket) {
+        console.log(rocket)
         setOpenPopup(true)
         setRocketSelected(rocket)
         setCursorValue(rocket.progress)
@@ -68,6 +71,31 @@ export default function dashboard() {
         )
     }
 
+    function searchRockets(n) {
+        setRockets(
+            new Array(n).fill().map((_, i) => ({
+                progress: Math.floor(Math.random() * 90) * 10,
+                ...rocketPicture[Math.floor(Math.random() * 3)],
+                id: i,
+            }))
+        )
+    }
+
+    function fire(laserX, laserY, fuseeX, fuseeY) {
+        const canvas = document.getElementById('space')
+        if (canvas.getContext) {
+            context = canvas.getContext('2d')
+        }
+        function drawLine() {
+            context.strokeStyle = 'green'
+            context.lineWidth = 4
+            context.moveTo(20, 100)
+            context.lineTo(200, 10)
+            context.stroke()
+        }
+        drawLine()
+    }
+
     useEffect(() => {
         moveRocket()
         projectComplete()
@@ -92,24 +120,6 @@ export default function dashboard() {
                                         className="w-[100%] text-black font-bold hover:bg-yellow-200"
                                         rows="1"
                                         name="message"
-                                        onChange={() => {
-                                            setRockets(
-                                                new Array(11)
-                                                    .fill()
-                                                    .map((_, i) => ({
-                                                        progress:
-                                                            defaultPosition[i] *
-                                                            100,
-                                                        ...rocketPicture[
-                                                            Math.floor(
-                                                                Math.random() *
-                                                                    3
-                                                            )
-                                                        ],
-                                                        id: i,
-                                                    }))
-                                            )
-                                        }}
                                         placeholder="search a rocket"
                                     />
                                 </label>
@@ -118,6 +128,7 @@ export default function dashboard() {
                                 <select
                                     id="language-select"
                                     className="w-[10vw] shadow-md shadow-gray-300 text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
+                                    onChange={() => searchRockets(8)}
                                 >
                                     <option value="4">Language</option>
                                     <option value="3">Java/Angular</option>
@@ -129,20 +140,7 @@ export default function dashboard() {
                                 <select
                                     id="type-select"
                                     className="w-[10vw] shadow-md shadow-gray-300 text-black font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
-                                    onChange={() =>
-                                        setRockets(
-                                            new Array(9).fill().map((_, i) => ({
-                                                progress:
-                                                    defaultPosition[i] * 100,
-                                                ...rocketPicture[
-                                                    Math.floor(
-                                                        Math.random() * 3
-                                                    )
-                                                ],
-                                                id: i,
-                                            }))
-                                        )
-                                    }
+                                    onChange={() => searchRockets(2)}
                                 >
                                     <option value="Language">Type</option>
                                     <option value="Java/Angular">Mobile</option>
@@ -156,20 +154,7 @@ export default function dashboard() {
                                 <select
                                     id="sector-select"
                                     className="w-[10vw] text-black  shadow-md shadow-gray-300 font-bold cursor-pointer hover:bg-yellow-200  py-2 my-6 rounded-md "
-                                    onChange={() =>
-                                        setRockets(
-                                            new Array(4).fill().map((_, i) => ({
-                                                progress:
-                                                    defaultPosition[i] * 100,
-                                                ...rocketPicture[
-                                                    Math.floor(
-                                                        Math.random() * 3
-                                                    )
-                                                ],
-                                                id: i,
-                                            }))
-                                        )
-                                    }
+                                    onChange={() => searchRockets(6)}
                                 >
                                     <option value="Language">Sector</option>
                                     <option value="Java/Angular">
@@ -198,20 +183,7 @@ export default function dashboard() {
                                 <select
                                     id="language-select"
                                     className="w-[10vw] text-black  shadow-md shadow-gray-300 font-bold cursor-pointer hover:bg-yellow-200 py-2 my-6 rounded-md "
-                                    onChange={(e) =>
-                                        setRockets(
-                                            new Array(7).fill().map((_, i) => ({
-                                                progress:
-                                                    defaultPosition[i] * 100,
-                                                ...rocketPicture[
-                                                    Math.floor(
-                                                        Math.random() * 3
-                                                    )
-                                                ],
-                                                id: i,
-                                            }))
-                                        )
-                                    }
+                                    onChange={(e) => searchRockets(10)}
                                 >
                                     <option value="Language">City</option>
                                     <option value="Lyon">Lyon</option>
