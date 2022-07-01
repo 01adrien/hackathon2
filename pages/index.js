@@ -30,8 +30,7 @@ export default function Home() {
                         or explore
                         <span
                             className="ml-5 mr-5 hover:scale-110 cursor-pointer"
-                            onClick={() => router.push('/dashboard')}
-                            onClicl={(event) => {
+                            onClick={(event) => {
                                 router.push('/dashboard')
                                 play
                             }}
